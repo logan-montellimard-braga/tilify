@@ -1,3 +1,51 @@
-#welcome.row
-  .columns.small-12.medium-10.small-centered.text-center
-    %h1 Bienvenue sur Tilify
+%section#welcome
+  .row
+    .columns.small-12.medium-10.small-centered
+      .text-center
+        %h1 Bienvenue sur Tilify !
+        %br
+        %br
+        %br
+        %p
+          <strong>Tilify</strong>, c'est le nouveau moyen communautaire de chercher, partager et archiver les meilleurs liens du Web, dans des domaines vari&eacute;s et modernes qui <em>vous</em> int&eacute;ressent&nbsp;!
+        %br
+        - unless user_signed_in?
+          = link_to "Se connecter", new_user_session_path, :class => 'button secondary'
+          &nbsp;
+          = link_to "S'inscrire", new_user_registration_path, :class => 'button secondary'
+          %br
+          %br
+        -# %hr
+        -# %br
+        -# %br
+
+%section#features
+  .row.text-center{'data-equalizer' => ''}
+    .columns.small-12.medium-10.small-centered
+      %h2 Le principe
+      %br
+      %br
+      .columns.small-12.medium-4.feature{'data-equalizer-watch' => ''}
+        %p
+          %i.fa.fa-search.fa-2x
+          %h4 Rechercher
+          %br
+          %br
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+      .columns.small-12.medium-4.feature{'data-equalizer-watch' => ''}
+        %p
+          %i.fa.fa-users.fa-2x
+          %h4 Partager
+          %br
+          %br
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At
+      .columns.small-12.medium-4.feature{'data-equalizer-watch' => ''}
+        %p
+          %i.fa.fa-archive.fa-2x
+          %h4 Archiver
+          %br
+          %br
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
+          tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At

@@ -56,7 +56,7 @@ h1, h2, h3, h4, h5, p, a {
   font-family: 'Raleway' !important;
 }
 
-.formRow, #welcome {
+.formRow, .content {
   padding: 30px;
   margin-top: 30px;
   background-color: white;
@@ -68,6 +68,14 @@ h1, h2, h3, h4, h5, p, a {
 
 .alert-box {
   text-align: center;
+  /* margin-top: 20px; */
+  margin: 0px;
+  float: center;
+  font-weight: bold !important;
+}
+
+.blackAlert {
+  color: #404040 !important;
 }
 
 .redWarning a {
@@ -75,7 +83,7 @@ h1, h2, h3, h4, h5, p, a {
 }
 
 .formRow a:hover {
-  text-decoration: underline;
+  text-decoration: underline !important;
 }
 
 html, body {
@@ -84,6 +92,7 @@ html, body {
   background-color: #ecf0f1;
   font-family: 'Raleway' !important;
 }
+
 
 h1 {
   color: #404040 !important;
@@ -138,4 +147,42 @@ nav input {
 
 .formRow small {
   color: #e74c3c !important;
+}
+
+.debug {
+  margin: 30px;
+  padding: 15px;
+  color: #707070;
+  border: 1px solid #707070;
+  background: white;
+}
+
+#welcome {
+  padding: 40px 0px;
+  width: 100%;
+  background-color: #008cba;
+  border-bottom: 5px solid #bfbfbf;
+}
+
+#welcome h1, h2, h3, h4, p {
+  color: white !important;
+}
+
+#features {
+  margin: 40px 0px;
+  color: #404040 !important;
+}
+
+#features p, #features h4, #features h2 {
+  color: #404040 !important;
+}
+.feature {
+  padding: 25px;
+}
+.feature:hover {
+  background-color: #eaeaea;
+}
+
+#features h4 {
+  margin-top: -20px !important;
 }

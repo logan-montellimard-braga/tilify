@@ -1,5 +1,5 @@
-.row.formRow
-  .small-12.medium-6.columns.small-centered
+.row
+  .small-12.medium-8.columns.small-centered.formRow
     %h2.text-center Se connecter
     = simple_form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f|
       .form-inputs

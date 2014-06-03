@@ -15,9 +15,9 @@
       .loader
     = render "shared/navbar.html.haml"
     .row
-      .small-10.columns.small-centered
-        = render "shared/flash.html.haml"
-        = yield
-
-        = debug(params) if Rails.env.development?
-        = javascript_include_tag "application"
+      .small-6.columns.small-centered
+    = render "shared/flash.html.haml"
+    = yield
+    .debug
+      = debug(params) if Rails.env.development?
+    = javascript_include_tag "application"

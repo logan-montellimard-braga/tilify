@@ -1,8 +1,8 @@
 - if notice
-  %p.success.alert-box
+  .secondary.alert-box.blackAlert{'data-alert' => ''}
     = notice
     %a.close{:href => '#'}> &times;
 - if alert
-  %p.alert.alert-box
+  .alert.alert-box{'data-alert' => ''}
     = alert
     %a.close{:href => '#'}> &times;

@@ -1,0 +1,7 @@
+- provide :title, 'Utilisateur ' + current_user.id.to_s
+
+.row
+  .columns.small-10.small-centered.text-center.content
+    %h1 Profil
+    = gravatar_for(@user)
+    = current_user.email
