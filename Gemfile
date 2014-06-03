@@ -15,6 +15,7 @@ group :development, :test do
   gem 'binding_of_caller', '0.7.1'
   gem 'rspec-rails', '2.13.1'
   gem 'spork-rails', '4.0.0'
+  gem 'html2haml'
 end
 
 group :test do
