@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
   get 'site/index'
+  get '/index' => 'site#index'
+  get '/home' => 'site#index'
+  get '/contact' => 'site#contact'
 
   devise_for :users
   # The priority is based upon order of creation: first created -> highest priority.

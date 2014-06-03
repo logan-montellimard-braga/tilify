@@ -1,0 +1,23 @@
+!!!
+%html{:lang => "fr"}
+  %head
+    %meta{:charset => "utf-8"}/
+    %meta{:content => "width=device-width, initial-scale=1.0", :name => "viewport"}/
+    %title= content_for?(:title) ? yield(:title) : "Tilify"
+    = stylesheet_link_tag    "application"
+    %link{:href => 'http://fonts.googleapis.com/css?family=Lato:300,400,700,300italic,400italic', :rel => 'stylesheet'}
+    %link{:href => 'http://fonts.googleapis.com/css?family=Raleway:400,300,700', :rel => 'stylesheet'}
+
+    = javascript_include_tag "vendor/modernizr"
+    = csrf_meta_tags
+  %body
+    .blankPage
+      .loader
+    .row
+      .small-10.columns.small-centered
+        = render "shared/navbar.html.haml"
+        = render "shared/flash.html.haml"
+        = yield
+
+        = debug(params) if Rails.env.development?
+        = javascript_include_tag "application"

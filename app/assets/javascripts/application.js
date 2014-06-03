@@ -16,4 +16,10 @@
 //= require turbolinks
 //= require_tree .
 
-$(function(){ $(document).foundation(); });
+$(function($){ 
+
+  $(document).ready(function() {
+    $('.blankPage').fadeOut('slow');
+    $(document).foundation();
+  })
+}(jQuery));

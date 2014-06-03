@@ -13,5 +13,133 @@
  *= require_tree .
  *= require_self
  *= require foundation_and_overrides
+ *= require font-awesome
 
  */
+
+* {
+  -webkit-transition: color 0.2s ease-in, background 0.2s ease-in;
+  -moz-transition: color 0.2s ease-in, background 0.2s ease-in;
+  -ms-transition: color 0.2s ease-in, background 0.2s ease-in;
+  -o-transition: color 0.2s ease-in, background 0.2s ease-in;
+  transition: color 0.2s ease-in, background 0.2s ease-in;
+}
+
+.blankPage {
+  background-color: #ecf0f1;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999999999999999999 !important;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+
+.loader {
+  width: 200px;
+  height: 200px;
+  z-index: 999999999999999999999999999 !important;
+  position: absolute;
+  left: 50%;
+  right: 50%;
+  top: 50%;
+  bottom: 50%;
+  background-repeat: no-repeat;
+  background-position: center;
+  margin: -100px 0 0 -100px;
+  background-image: url(loader.gif);
+}
+
+h1, h2, h3, h4, h5, p, a {
+  font-family: 'Raleway' !important;
+}
+
+.formRow, #welcome {
+  padding: 30px;
+  margin-top: 30px;
+  background-color: white;
+}
+
+.formRow h2, .formRow p, .formRow label {
+  color: #404040 !important;
+}
+
+.alert-box {
+  text-align: center;
+}
+
+.redWarning a {
+  color: #e74c3c !important;
+}
+
+.formRow a:hover {
+  text-decoration: underline;
+}
+
+html, body {
+  margin-top: 20px;
+  width: 100%;
+  overflow-x: none;
+  background-color: #ecf0f1;
+  font-family: 'Raleway' !important;
+}
+
+h1 {
+  color: #404040 !important;
+}
+
+#menu {
+  background-color: #bdc3c7;
+  color: white;
+  margin-bottom: 1%;
+}
+
+.menu {
+  background-color: #bdc3c7;
+  color: white;
+  margin-bottom: 1%;
+}
+
+nav a {
+  color: #04498c !important;
+}
+
+nav a:hover {
+  color: rgb(73,125,168) !important;
+}
+
+.name a {
+  font-weight: bold !important;
+}
+
+dd {
+  margin: 0;
+  padding: 0;
+  width: auto;
+}
+
+.search input {
+  font-size: 0.7em;
+}
+
+nav a{
+  color: white !important;
+}
+
+nav a:hover{
+  color: #95a5a6 !important;
+}
+
+nav h1 {
+  font-size: 1.3em !important;
+}
+
+nav input {
+  height: 29px !important;
+}
+
+.formRow small {
+  color: #e74c3c !important;
+}

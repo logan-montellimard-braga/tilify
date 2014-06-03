@@ -1,0 +1,55 @@
+#menu.fixed
+  %nav.top-bar{'data-topbar' => ''}
+    %ul.title-area
+      %li.name
+        %h1
+          = link_to 'TILIFY', root_path
+      %li.toggle-topbar.menu-icon
+
+    %section.top-bar-section
+      %ul.right
+        - if current_page?('/')
+          %li.active
+            %a{:href => '/'}
+              %i.fa.fa-home
+        - else
+          %li
+            %a{:href => '/'}
+              %i.fa.fa-home
+        %li
+          %a{:href => '#'}
+            %i.fa.fa-envelope
+        - if (current_page?(controller: 'devise/registrations', action: 'new') || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'edit'))
+          %li.has-dropdown.active
+            %a{:href => '#'}
+              %i.fa.fa-user
+            %ul.dropdown
+              %li
+                - if user_signed_in?
+                  = link_to('Modifier le profil', edit_user_registration_path, :method => :get)
+                  = link_to('Deconnexion', destroy_user_session_path, :method => :delete)
+                - else
+                  = link_to('Connexion', new_user_session_path)
+                  = link_to('Inscription', new_user_registration_path)
+        - else
+          %li.has-dropdown
+            %a{:href => '#'}
+              %i.fa.fa-user
+            %ul.dropdown
+              %li
+                - if user_signed_in?
+                  = link_to('Modifier le profil', edit_user_registration_path, :method => :get)
+                  = link_to('Deconnexion', destroy_user_session_path, :method => :delete)
+                - else
+                  = link_to('Connexion', new_user_session_path)
+                  = link_to('Inscription', new_user_registration_path)
+
+
+      %ul.right
+        %li.has-form
+          .row.collapse
+            .columns.small-8
+              %input{:type => 'text', :placeholder => 'Rechercher...'}
+            .columns.small-4
+              %a.button{:href => '#'}
+                %i.fa.fa-search
