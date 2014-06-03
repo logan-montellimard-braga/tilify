@@ -13,9 +13,9 @@
   %body
     .blankPage
       .loader
+    = render "shared/navbar.html.haml"
     .row
       .small-10.columns.small-centered
-        = render "shared/navbar.html.haml"
         = render "shared/flash.html.haml"
         = yield
 

@@ -79,7 +79,6 @@ h1, h2, h3, h4, h5, p, a {
 }
 
 html, body {
-  margin-top: 20px;
   width: 100%;
   overflow-x: none;
   background-color: #ecf0f1;
@@ -102,13 +101,6 @@ h1 {
   margin-bottom: 1%;
 }
 
-nav a {
-  color: #04498c !important;
-}
-
-nav a:hover {
-  color: rgb(73,125,168) !important;
-}
 
 .name a {
   font-weight: bold !important;
@@ -129,11 +121,15 @@ nav a{
 }
 
 nav a:hover{
-  color: #95a5a6 !important;
+  color: #ececec !important;
 }
 
 nav h1 {
   font-size: 1.3em !important;
+}
+
+nav h1 a:hover {
+  color: #008cba !important;
 }
 
 nav input {

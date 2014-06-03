@@ -5,6 +5,7 @@
         %h1
           = link_to 'TILIFY', root_path
       %li.toggle-topbar.menu-icon
+        %a{:href => '#'} Menu
 
     %section.top-bar-section
       %ul.right
@@ -12,17 +13,21 @@
           %li.active
             %a{:href => '/'}
               %i.fa.fa-home
+                &nbsp;Accueil
         - else
           %li
             %a{:href => '/'}
               %i.fa.fa-home
+                &nbsp;Accueil
         %li
           %a{:href => '#'}
             %i.fa.fa-envelope
+              &nbsp;Contact
         - if (current_page?(controller: 'devise/registrations', action: 'new') || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'edit'))
           %li.has-dropdown.active
             %a{:href => '#'}
               %i.fa.fa-user
+                &nbsp;Espace membre
             %ul.dropdown
               %li
                 - if user_signed_in?
@@ -35,17 +40,17 @@
           %li.has-dropdown
             %a{:href => '#'}
               %i.fa.fa-user
+                &nbsp;Espace membre
             %ul.dropdown
-              %li
-                - if user_signed_in?
-                  = link_to('Modifier le profil', edit_user_registration_path, :method => :get)
-                  = link_to('Deconnexion', destroy_user_session_path, :method => :delete)
-                - else
-                  = link_to('Connexion', new_user_session_path)
-                  = link_to('Inscription', new_user_registration_path)
+              - if user_signed_in?
+                %li= link_to('Modifier le profil', edit_user_registration_path, :method => :get)
+                %li= link_to('Deconnexion', destroy_user_session_path, :method => :delete)
+              - else
+                %li= link_to('Connexion', new_user_session_path)
+                %li= link_to('Inscription', new_user_registration_path)
 
 
-      %ul.right
+      %ul.right.show-for-large-up
         %li.has-form
           .row.collapse
             .columns.small-8
