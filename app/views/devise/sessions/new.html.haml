@@ -1,3 +1,4 @@
+- provide :title, 'Tilify - Connexion'
 .row
   .small-12.medium-8.columns.small-centered.formRow
     %h2.text-center Se connecter
@@ -9,3 +10,5 @@
       .form-actions
         = f.button :submit, "Connexion"
     = render "devise/shared/links"
+    %br
+    = link_to 'Se connecter en administrateur', new_admin_session_path

@@ -1,6 +1,6 @@
 - provide :title, 'Profil'
 
-- if (admin_signed_in? || current_user.id.to_s == params[:id])
+- if (admin_signed_in? || ( user_signed_in? && current_user.id.to_s == params[:id]))
   .row
     .columns.small-10.small-centered.text-center.content
       %h1 Profil

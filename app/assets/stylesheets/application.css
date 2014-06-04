@@ -204,11 +204,12 @@ footer h5 {
 }
 
 footer p, footer h5 {
-  font-size: 0.85rem;
+  font-size: 0.8rem;
+  line-height: 1rem;
 }
 
 .footerLogo {
-  border-right: 1px solid white;
+  border-right: 1px solid #707070;
   padding: 25px;
   margin-bottom: 40px;
   text-align: left;
