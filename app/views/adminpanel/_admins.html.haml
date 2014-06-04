@@ -5,10 +5,12 @@
   %table
     %thead
       %tr
-        %th{:width => 400} ID
-        %th{:width => 400} Email
+        %th ID
+        %th Pseudo
+        %th Email
     %tbody
       - @admins.each do |admin|
         %tr
           %td= admin.id
+          %td= admin.username
           %td= admin.email

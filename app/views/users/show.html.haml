@@ -1,9 +1,14 @@
-- provide :title, 'Profil'
+- provide :title, 'Tilify - Profil ' + @user.username
 
 - if (admin_signed_in? || ( user_signed_in? && current_user.id.to_s == params[:id]))
   .row
     .columns.small-10.small-centered.text-center.content
-      %h1 Profil
+      %h1>
+        Profil de
+        = @user.username
+      %br
+      %br
+
       = gravatar_for(@user)
       = @user.email
 - else

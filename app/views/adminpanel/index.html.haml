@@ -3,7 +3,10 @@
   .row
     .columns.small-12.medium-10.small-centered
       .text-center
-        %h1 Bonjour, <strong>Admin</strong> !
+        %h1>
+          Bonjour, admin<strong>
+          = current_admin.username
+          </strong> !
         %br
         %br
         %p Bienvenue sur le panel d'administration.

@@ -8,14 +8,16 @@
   %table
     %thead
       %tr
-        %th{:width => 200} ID
-        %th{:width => 300} Email
-        %th{:width => 300} Supprimer
+        %th ID
+        %th Pseudo
+        %th Mail
+        %th Supprimer
     %tbody
     - @users.each do |user|
       %tr
         %td
           = link_to user.id.to_s, user_path(id: user.id)
+        %td= user.username
         %td= user.email
         - if admin_signed_in?
           %td
