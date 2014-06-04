@@ -186,3 +186,40 @@ nav input {
 #features h4 {
   margin-top: -20px !important;
 }
+
+footer {
+  background-color: #404040;
+  color: white !important;
+  padding: 25px;
+  margin-top: 40px;
+  width: 100%;
+  text-align: right !important;
+  border-top: 1px solid #707070;
+  vertical-align: center;
+}
+
+footer h5 {
+  color: white !important;
+  font-weight: bold;
+}
+
+footer p, footer h5 {
+  font-size: 0.85rem;
+}
+
+.footerLogo {
+  border-right: 1px solid white;
+  padding: 25px;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+.footerLogo img {
+  width: 150px;
+  margin: auto !important;
+}
+
+.contactText {
+  /* padding: 10px 0px; */
+  vertical-align: center;
+}
