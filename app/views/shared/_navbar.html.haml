@@ -37,7 +37,6 @@
                   %li= link_to('Panel',  adminpanel_index_path)
                   %li= link_to('Deconnexion', destroy_admin_session_path, :method => :delete)
                 - elsif user_signed_in?
-                  %li= link_to('Profil', '/users/' + current_user.id.to_s, :method => :get)
                   %li= link_to('Modifier le profil', edit_user_registration_path, :method => :get)
                   %li= link_to('Deconnexion', destroy_user_session_path, :method => :delete)
                 - else
@@ -56,7 +55,6 @@
                 %li= link_to('Panel', adminpanel_index_path)
                 %li= link_to('Deconnexion', destroy_admin_session_path, :method => :delete)
               - elsif user_signed_in?
-                %li= link_to('Profil', '/users/' + current_user.id.to_s, :method => :get)
                 %li= link_to('Modifier le profil', edit_user_registration_path, :method => :get)
                 %li= link_to('Deconnexion', destroy_user_session_path, :method => :delete)
               - else
