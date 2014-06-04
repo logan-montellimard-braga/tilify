@@ -223,3 +223,11 @@ footer p, footer h5 {
   /* padding: 10px 0px; */
   vertical-align: center;
 }
+
+#usersList {
+  margin: 40px 0px;
+}
+
+#usersList th {
+  width: 800px;
+}

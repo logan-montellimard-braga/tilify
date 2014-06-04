@@ -1,0 +1,15 @@
+.row
+  .small-12.medium-8.columns.small-centered.text-center
+    %h1 Utilisateurs inscrits
+    %br
+    %br
+    %table
+      %thead
+        %tr
+          %th{:width => 400} ID
+          %th{:width => 400} Email
+      %tbody
+      - @users.each do |user|
+        %tr
+          %td= user.id
+          %td= user.email

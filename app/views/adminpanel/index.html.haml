@@ -4,3 +4,12 @@
       .text-center
         %h1 Bonjour, <strong>Admin</strong> !
         %br
+        %br
+        %p Bienvenue sur le panel d'administration.
+%section#usersList
+  -# %ul{'data-tab' => ''}.tabs
+  -#   %li.tab-title.active
+  -#     %a{:href => '#utilisateurs'} Utilisateurs
+  -#   %li.tab-title
+  -#     %a{:href => '#foobar'} Foobar
+  = render 'users'

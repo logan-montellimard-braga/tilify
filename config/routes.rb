@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
   get 'adminpanel/index'
+  get 'adminpanel/users' => 'adminpanel#users'
 
   devise_for :admins
   root 'site#index'
