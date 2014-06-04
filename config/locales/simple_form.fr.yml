@@ -3,7 +3,7 @@ fr:
     "yes": 'Oui'
     "no": 'Non'
     required:
-      text: 'required'
+      text: 'requis'
       mark: '*'
       # You can uncomment the line below if you need to overwrite the whole required html.
       # When using html, text and mark won't be used.
@@ -13,14 +13,17 @@ fr:
     # Labels and hints examples
     labels:
       defaults:
+        username: "Nom d'utilisateur"
         password: 'Mot de passe'
         password_confirmation: 'Confirmation'
         remember_me: " Se souvenir de moi"
       user:
         new:
+          username: "Nom d'utilisateur"
           email: "Email"
           remember_me: " Se souvenir de moi"
         edit:
+          username: "Nom d'utilisateur"
           email: 'Nouvel email'
           current_password: 'Mot de passe actuel'
         remember_me: " Se souvenir de moi"

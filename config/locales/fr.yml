@@ -7,6 +7,15 @@
 # Emended by Benjamin des Gachons and Patrick Chew : <http://www.fitima.org/docs/fiche.pdf>
 
 fr:
+  login: "Nom d'utilisateur"
+  attributes:
+    login: "Nom d'utilisateur"
+  activerecord:
+    login: "Nom d'utilisateur"
+    attributes:
+      login: "Nom d'utilisateur"
+      user:
+        login: "Nom d'utilisateur"
   date:
     abbr_day_names:
       - dim
