@@ -1,0 +1,21 @@
+%section#usersList
+  .small-12.medium-8.columns.small-centered.text-center
+    %h1 Utilisateurs inscrits
+    %br
+    %br
+    %table
+      %thead
+        %tr
+          %th{:width => 200} ID
+          %th{:width => 300} Email
+          %th{:width => 300} Supprimer
+      %tbody
+      - @users.each do |user|
+        %tr
+          %td
+            = link_to user.id.to_s, user_path(id: user.id)
+          %td= user.email
+          - if admin_signed_in?
+            %td
+              %p.redWarning
+                = link_to "Supprimer", admin_destroy_user_path(user), method: :delete, data: { confirm: "Êtes-vous certain ?"  }

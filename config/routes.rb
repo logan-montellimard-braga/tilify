@@ -1,12 +1,11 @@
 Rails.application.routes.draw do
-  get 'adminpanel/index'
-
   devise_for :admins
+  get '/admin' => 'adminpanel#index', :as => :adminpanel_index
+  match '/users' => 'adminpanel#users', :via => :get
+
   root 'site#index'
   get 'site/index'
   get '/index' => 'site#index'
-  get '/home' => 'site#index'
-  get '/contact' => 'site#contact'
 
   devise_for :users
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user

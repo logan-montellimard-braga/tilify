@@ -1,5 +1,8 @@
 .small-12.medium-8.columns.small-centered.text-center
-  %h1 Utilisateurs inscrits
+  %h1
+    %a{:href => users_path, :title => 'Afficher les utilisateurs dans une page seule'}
+      Utilisateurs inscrits
+      %i.fa.fa-external-link
   %br
   %br
   %table
@@ -11,7 +14,8 @@
     %tbody
     - @users.each do |user|
       %tr
-        %td= user.id
+        %td
+          = link_to user.id.to_s, user_path(id: user.id)
         %td= user.email
         - if admin_signed_in?
           %td

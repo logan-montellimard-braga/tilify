@@ -22,7 +22,7 @@
 
 %section#usersList
   .row
-    .small-12.medium-8.columns.small-centered.text-center
+    .small-12.medium-9.columns.small-centered.text-center
       %h2 Administration
       %br
       %br
@@ -39,6 +39,11 @@
             &nbsp;
             Administrateurs
         %li.tab-title
+          %a{:href => '#messages'}
+            %i.fa.fa-comments
+            &nbsp;
+            Messages
+        %li.tab-title
           %a{:href => '#tuiles'}
             %i.fa.fa-square
             &nbsp;
@@ -49,3 +54,4 @@
         #administrateurs.content
           = render 'admins'
         #tuiles.content
+        #messages.content

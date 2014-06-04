@@ -49,7 +49,7 @@
   background-repeat: no-repeat;
   background-position: center;
   margin: -100px 0 0 -100px;
-  background-image: url(loader.gif);
+  background-image: image-url("loader.gif");
 }
 
 h1, h2, h3, h4, h5, p, a {
@@ -231,6 +231,14 @@ footer p, footer h5 {
 
 #usersList th {
   width: 800px;
+}
+
+#usersList h1 a {
+  color: #404040 !important;
+}
+
+#usersList h1 a:hover {
+  color: #008cba !important;
 }
 
 .adminWelcome a {
