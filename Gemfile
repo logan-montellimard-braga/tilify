@@ -5,6 +5,7 @@ gem 'rails', '>= 4.1.0'
 
 
 group :production do
+  gem 'pg', '0.15.1'
   gem 'rails_12factor', '0.0.2'
 end
 
@@ -16,6 +17,7 @@ group :development, :test do
   gem 'rspec-rails', '2.13.1'
   gem 'spork-rails', '4.0.0'
   gem 'html2haml'
+  gem 'sqlite3'
 end
 
 group :test do
@@ -25,7 +27,6 @@ group :test do
 end
 
 gem 'devise', '~> 3.0.0.rc'
-gem 'sqlite3'
 gem 'sprockets', '2.11.0'
 gem 'foundation-rails'
 gem 'simple_form', '~> 3.0.0.rc'
