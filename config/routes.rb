@@ -1,6 +1,5 @@
 Rails.application.routes.draw do
   get 'adminpanel/index'
-  get 'adminpanel/users' => 'adminpanel#users'
 
   devise_for :admins
   root 'site#index'
@@ -10,7 +9,9 @@ Rails.application.routes.draw do
   get '/contact' => 'site#contact'
 
   devise_for :users
-  # get 'users/:id' => 'users#show'
+  match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
+  match 'users/:id' => 'users#show', :via => :get, as: :user
+  resources :users
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

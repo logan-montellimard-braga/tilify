@@ -1,4 +1,4 @@
-%section#welcome
+%section#welcome.adminWelcome
   .row
     .columns.small-12.medium-10.small-centered
       .text-center
@@ -6,10 +6,45 @@
         %br
         %br
         %p Bienvenue sur le panel d'administration.
+        %p
+          %a{:href => '#', 'data-reveal-id' => 'whyUDoDis'}
+            %i.fa.fa-info
+            &nbsp;
+            <em>Pourquoi ai-je &eacute;t&eacute; redirig&eacute; ici ?</em>
+        #whyUDoDis.medium.text-center.reveal-modal{'data-reveal' => ''}
+          %p.lead Redirection depuis la page d'accueil
+          %p
+            Vous ne devriez vous connecter en administrateur que pour les taches de maintenance.
+            %br
+            Si vous souhaitez visiter le site, connectez-vous en tant que simple utilisateur.
+          %a.close-reveal-modal &times;
+
 %section#usersList
-  -# %ul{'data-tab' => ''}.tabs
-  -#   %li.tab-title.active
-  -#     %a{:href => '#utilisateurs'} Utilisateurs
-  -#   %li.tab-title
-  -#     %a{:href => '#foobar'} Foobar
-  = render 'users'
+  .row
+    .small-12.medium-8.columns.small-centered.text-center
+      %h2 Administration
+      %br
+      %br
+      %br
+      %ul.tabs{'data-tab' => ''}
+        %li.tab-title.active
+          %a{:href => '#utilisateurs'}
+            %i.fa.fa-users
+            &nbsp;
+            Utilisateurs
+        %li.tab-title
+          %a{:href => '#administrateurs'}
+            %i.fa.fa-bolt
+            &nbsp;
+            Administrateurs
+        %li.tab-title
+          %a{:href => '#tuiles'}
+            %i.fa.fa-square
+            &nbsp;
+            Tuiles
+      .tabs-content
+        #utilisateurs.content.active
+          = render 'users'
+        #administrateurs.content
+          = render 'admins'
+        #tuiles.content

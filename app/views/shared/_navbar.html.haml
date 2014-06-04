@@ -29,14 +29,17 @@
               %i.fa.fa-user
                 - if admin_signed_in?
                   &nbsp;Administration
-                - else
+                - elsif user_signed_in?
                   &nbsp;Espace membre
+                - else
+                  &nbsp;Nous rejoindre
             %ul.dropdown
               %li
                 - if admin_signed_in?
                   %li= link_to('Panel',  adminpanel_index_path)
                   %li= link_to('Deconnexion', destroy_admin_session_path, :method => :delete)
                 - elsif user_signed_in?
+                  %li= link_to('Profil', user_path(id: current_user.id), :method => :get)
                   %li= link_to('Modifier le profil', edit_user_registration_path, :method => :get)
                   %li= link_to('Deconnexion', destroy_user_session_path, :method => :delete)
                 - else
@@ -48,13 +51,16 @@
               %i.fa.fa-user
                 - if admin_signed_in?
                   &nbsp;Administration
-                - else
+                - elsif user_signed_in?
                   &nbsp;Espace membre
+                - else
+                  &nbsp;Nous rejoindre
             %ul.dropdown
               - if admin_signed_in?
                 %li= link_to('Panel', adminpanel_index_path)
                 %li= link_to('Deconnexion', destroy_admin_session_path, :method => :delete)
               - elsif user_signed_in?
+                %li= link_to('Profil', user_path(id: current_user.id), :method => :get)
                 %li= link_to('Modifier le profil', edit_user_registration_path, :method => :get)
                 %li= link_to('Deconnexion', destroy_user_session_path, :method => :delete)
               - else

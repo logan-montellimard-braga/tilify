@@ -1,7 +1,12 @@
-- provide :title, 'Utilisateur ' + current_user.id.to_s
+- provide :title, 'Profil'
 
-.row
-  .columns.small-10.small-centered.text-center.content
-    %h1 Profil
-    = gravatar_for(@user)
-    = current_user.email
+- if (admin_signed_in? || current_user.id.to_s == params[:id])
+  .row
+    .columns.small-10.small-centered.text-center.content
+      %h1 Profil
+      = gravatar_for(@user)
+      = @user.email
+- else
+  :javascript
+    window.location.href="/"
+  - flash[:alert] = "Vous n'avez pas l'autorisation de visualiser ce profil."

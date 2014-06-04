@@ -231,3 +231,19 @@ footer p, footer h5 {
 #usersList th {
   width: 800px;
 }
+
+.adminWelcome a {
+  color: white !important;
+}
+
+.adminWelcome a:hover {
+  color: #dedede !important;
+}
+
+#usersList h2 {
+  color: #404040 !important;
+}
+
+#whyUDoDis p {
+  color: #404040 !important;
+}

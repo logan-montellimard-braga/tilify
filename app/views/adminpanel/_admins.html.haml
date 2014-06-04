@@ -1,0 +1,14 @@
+.small-12.medium-8.columns.small-centered.text-center
+  %h1 Administrateurs
+  %br
+  %br
+  %table
+    %thead
+      %tr
+        %th{:width => 400} ID
+        %th{:width => 400} Email
+    %tbody
+      - @admins.each do |admin|
+        %tr
+          %td= admin.id
+          %td= admin.email
