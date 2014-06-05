@@ -1,0 +1,46 @@
+.small-12.medium-8.columns.small-centered.text-center
+  %h1
+    %a{:href => '#', :title => 'Afficher les messages dans une page seule'}
+      Messages priv&eacute;s
+      %i.fa.fa-external-link
+  %br
+  %p.black Messages que vous seuls pouvez voir.
+  %br
+    %table
+      %thead
+        %tr
+          %th Auteur
+          %th Sujet
+          %th Message
+          %th Date
+      %tbody
+        - @private_messages.each do |message|
+          %tr
+            %td= User.find_by_id(message.user_id).username
+            %td= message.title
+            %td= message.content
+            %td= message.created_at.to_formatted_s(:db)
+  %br
+  %hr
+  %br
+  %h1
+    %a{:href => '#', :title => 'Afficher les messages dans une page seule'}
+      Messages publics
+      %i.fa.fa-external-link
+  %br
+  %p.black Messages visibles par tous les utilisateurs inscrits.
+  %br
+    %table
+      %thead
+        %tr
+          %th Auteur
+          %th Sujet
+          %th Message
+          %th Date
+      %tbody
+        - @public_messages.each do |message|
+          %tr
+            %td= User.find_by_id(message.user_id).username
+            %td= message.title
+            %td= message.content
+            %td= message.created_at.to_formatted_s(:db)
