@@ -4,7 +4,7 @@ Rails.application.routes.draw do
 
   devise_for :admins
   get '/admin' => 'adminpanel#index', :as => :adminpanel_index
-  match '/users' => 'adminpanel#users', :via => :get
+  match '/users' => 'adminpanel#index', :via => :get
 
   root 'site#index'
   get 'site/index'
