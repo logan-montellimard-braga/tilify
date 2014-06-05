@@ -1,0 +1,24 @@
+- provide :title, 'Tilify - Contact'
+%section#welcome
+  .row
+    .columns.small-12.medium-10.small-centered
+      .text-center
+        %h1 Nous contacter
+        %br
+        %br
+        %br
+        %p
+          Envie de nous laisser un mot, passer un petit coucou ou nous poser une question ? Pas de probl&egrave;mes, c'est ici que &ccedil;a se passe !
+        %br
+        = link_to "Voir les messages publics", messages_path, class: 'button secondary'
+
+%section#features.formRowNeuter
+  .row
+    .columns.small-12.medium-8.small-centered
+      %h2.text-center Nouveau message
+      %br
+      %br
+      %p
+        Si vous cochez la case 'Public', votre message sera visible par tous les utilisateurs inscrits. Sinon, seuls les administrateurs pourront y acc&eacute;der.
+      %br
+      = render 'form'

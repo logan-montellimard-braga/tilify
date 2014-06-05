@@ -1,0 +1,26 @@
+- provide :title, 'Tilify - Messages'
+%section#usersList.formRowNeuter
+  .row
+    .columns.small-12.medium-10.small-centered
+      %h1.text-center Messages des utilisateurs
+      %br
+      %br
+      - cpt = 1
+      - @messages.each do |message|
+        - if (cpt%3 == 0 || cpt ==1)
+          .row
+            .columns.small-4
+              - if message.public
+                %blockquote
+                  %h6= message.title
+                  %p= message.content
+                  %cite= getUserById(message.user_id).username
+        - else
+          .columns.small-4
+            - if message.public
+              %blockquote
+                %h6= message.title
+                %p= message.content
+                %cite= getUserById(message.user_id).username
+        - cpt += 1
+      %br

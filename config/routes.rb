@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
+  match '/contact' => 'messages#new', :via => :get
+  resources :messages, only: [:index, :create, :new]
+
   devise_for :admins
   get '/admin' => 'adminpanel#index', :as => :adminpanel_index
   match '/users' => 'adminpanel#users', :via => :get

@@ -145,7 +145,7 @@ nav input {
   height: 29px !important;
 }
 
-.formRow small {
+.formRow small, .formRowNeuter small {
   color: #e74c3c !important;
 }
 
@@ -255,4 +255,18 @@ footer p, footer h5 {
 
 #whyUDoDis p {
   color: #404040 !important;
+}
+
+blockquote {
+  border-left: 1px solid #dfdfdf !important;
+}
+
+blockquote p {
+  color: #404040 !important;
+  margin-left: 10px !important;
+}
+
+blockquote h6 {
+  background-color: transparent !important;
+  color: #008cba !important;
 }
