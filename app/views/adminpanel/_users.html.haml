@@ -1,26 +1,60 @@
 .small-12.medium-8.columns.small-centered.text-center
   %h1
-    %a{:href => users_path, :title => 'Afficher les utilisateurs dans une page seule'}
+    %a{:href => '#', 'data-reveal-id' => 'usersModal'}
       Utilisateurs inscrits
-      %i.fa.fa-external-link
+      %i.fa.fa-plus-circle
+      #usersModal.content.large.text-center.reveal-modal{'data-reveal' => ''}
+        .small-12.columns.small-centered.text-center
+          %p.lead D&eacute;tails des utilisateurs
+          - if @users.length > 0
+            %table
+              %thead
+                %tr
+                  %th ID
+                  %th Pseudo
+                  %th Email
+                  %th Inscription
+                  %th Mise &agrave; jour
+                  %th Supprimer
+              %tbody
+                - @users.each do |user|
+                  %tr
+                    %td
+                      = link_to user.id.to_s, user_path(id: user.id)
+                    %td
+                      = link_to user.username.to_s, user_path(id: user.id)
+                    %td= user.email
+                    %td= user.created_at.to_formatted_s(:db)
+                    %td= user.updated_at.to_formatted_s(:db)
+                    - if admin_signed_in?
+                      %td
+                        %p.redWarning
+                          = link_to "Supprimer", admin_destroy_user_path(user), method: :delete, data: { confirm: "Êtes-vous certain ?"  }
+          - else
+            %p.black Il n'y a rien ici !
+        %a.close-reveal-modal &times;
+
   %br
   %br
-  %table
-    %thead
-      %tr
-        %th ID
-        %th Pseudo
-        %th Mail
-        %th Supprimer
-    %tbody
-    - @users.each do |user|
-      %tr
-        %td
-          = link_to user.id.to_s, user_path(id: user.id)
-        %td
-          = link_to user.username.to_s, user_path(id: user.id)
-        %td= user.email
-        - if admin_signed_in?
+  - if @users.length > 0
+    %table
+      %thead
+        %tr
+          %th ID
+          %th Pseudo
+          %th Mail
+          %th Supprimer
+      %tbody
+      - @users.each do |user|
+        %tr
           %td
-            %p.redWarning
-              = link_to "Supprimer", admin_destroy_user_path(user), method: :delete, data: { confirm: "Êtes-vous certain ?"  }
+            = link_to user.id.to_s, user_path(id: user.id)
+          %td
+            = link_to user.username.to_s, user_path(id: user.id)
+          %td= user.email
+          - if admin_signed_in?
+            %td
+              %p.redWarning
+                = link_to "Supprimer", admin_destroy_user_path(user), method: :delete, data: { confirm: "Êtes-vous certain ?"  }
+  - else
+    %p.black Il n'y a rien ici !

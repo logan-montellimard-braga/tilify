@@ -1,6 +1,6 @@
 %section#usersList
   .small-12.medium-8.columns.small-centered.text-center
-    %h1 Utilisateurs inscrits
+    %h1 Administrateurs
     %br
     %br
     %table
@@ -11,12 +11,13 @@
           %th Email
           %th Inscription
           %th Mise &agrave; jour
-          %th Supprimer
+          %th Connexions
+          %th Derni&egrave;re
       %tbody
-      - @users.each do |user|
-        %tr
-          %td
-            = link_to user.id.to_s, user_path(id: user.id)
+        - @users.each do |user|
+          %tr
+            %td
+              = link_to user.id.to_s, user_path(id: user.id)
           %td
             = link_to user.username.to_s, user_path(id: user.id)
           %td= user.email

@@ -1,5 +1,35 @@
 .small-12.medium-8.columns.small-centered.text-center
-  %h1 Administrateurs
+  %h1
+    %a{:href => '#', 'data-reveal-id' => 'adminsModal'}
+      Administrateurs
+      %i.fa.fa-plus-circle
+    .small-12.columns.small-centered.text-center
+      #adminsModal.content.large.text-center.reveal-modal{'data-reveal' => ''}
+        %p.lead D&eacute;tails des administrateurs
+        %table
+          %thead
+            %tr
+              %th ID
+              %th Pseudo
+              %th Email
+              %th Inscription
+              %th Mise &agrave; jour
+              %th Connexions
+              %th Derni&egrave;re
+              %th IP
+          %tbody
+            - @admins.each do |admin|
+              %tr
+                %td= admin.id
+                %td= admin.username
+                %td= admin.email
+                %td= admin.created_at.to_formatted_s(:db)
+                %td= admin.updated_at.to_formatted_s(:db)
+                %td= admin.sign_in_count
+                %td= admin.last_sign_in_at.to_formatted_s(:db)
+                %td= admin.last_sign_in_ip
+        %a.close-reveal-modal &times;
+
   %br
   %br
   %table
