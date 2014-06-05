@@ -14,12 +14,18 @@
 //= require jquery_ujs
 //= require foundation
 //= require turbolinks
+//= require masonry/jquery.masonry
 //= require_tree .
 
-$(function($){ 
+$(function($){
 
   $(document).ready(function() {
     $('.blankPage').fadeOut('slow');
     $(document).foundation();
-  })
+  });
+
+  $('#masonry-container').masonry({
+    itemSelector: '.myMasonry',
+    isAnimated: !Modernizr.csstransitions,
+  });
 }(jQuery));

@@ -21,12 +21,12 @@
                 &nbsp;Accueil
         - if (!admin_signed_in? && current_page?('/messages') || current_page?('/contact'))
           %li.active
-            %a{:href => '/messages'}
+            %a{:href => '/contact'}
               %i.fa.fa-envelope
               &nbsp;Contact
         - elsif !admin_signed_in?
           %li
-            %a{:href => '/messages'}
+            %a{:href => '/contact'}
               %i.fa.fa-envelope
               &nbsp;Contact
         - if (current_page?(controller: 'devise/registrations', action: 'new') || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'edit') || admin_signed_in?)

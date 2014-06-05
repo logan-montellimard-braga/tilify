@@ -1,26 +1,21 @@
 - provide :title, 'Tilify - Messages'
 %section#usersList.formRowNeuter
   .row
-    .columns.small-12.medium-10.small-centered
+    .columns.small-12.medium-10.small-centered.text-center
       %h1.text-center Messages des utilisateurs
       %br
       %br
-      - cpt = 1
-      - @messages.each do |message|
-        - if (cpt%3 == 0 || cpt ==1)
-          .row
-            .columns.small-4
-              - if message.public
-                %blockquote
-                  %h6= message.title
-                  %p= message.content
-                  %cite= getUserById(message.user_id).username
-        - else
-          .columns.small-4
-            - if message.public
-              %blockquote
-                %h6= message.title
-                %p= message.content
-                %cite= getUserById(message.user_id).username
-        - cpt += 1
+      = link_to 'Poster un message', contact_path, class: 'button'
       %br
+      %br
+      %hr
+.columns.small-10.small-centered
+  #masonry-container.transitions-enabled.clearfix.centered
+    .row
+      .gallerie.small-centered.columns.small-10
+        - @messages.each do |message|
+          .columns.small-8.medium-5.large-4.myMasonry
+            %blockquote
+              %h6= message.title
+              %p= message.content
+              %cite= getUserById(message.user_id).username

@@ -14,6 +14,11 @@
 *= require_self
 *= require foundation_and_overrides
 *= require font-awesome
+*= require 'masonry/basic'
+*= require 'masonry/centered'
+*= require 'masonry/fluid'
+*= require 'masonry/gutters'
+*= require 'masonry/transitions'
 
 */
 
@@ -258,15 +263,28 @@ footer p, footer h5 {
 }
 
 blockquote {
-  border-left: 1px solid #dfdfdf !important;
+  border-left: 1px solid #dddddd !important;
+  // background-color: #efefef !important;
+  padding: 20px;
+}
+
+blockquote:hover {
+  background-color: #efefef !important;
 }
 
 blockquote p {
   color: #404040 !important;
   margin-left: 10px !important;
+  font-size: 0.9rem !important;
 }
 
 blockquote h6 {
   background-color: transparent !important;
   color: #008cba !important;
+}
+
+.masonry, .masonry:before, .masonry:after {
+  -moz-box-sizing: border-box !important;
+  -webkit-box-sizing: border-box !important;
+  box-sizing: border-box !important;
 }

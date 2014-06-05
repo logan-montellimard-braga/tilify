@@ -5,7 +5,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.all
+    @messages = Message.where(:public => true)
     @users = User.all
   end
 
@@ -26,13 +26,15 @@ class MessagesController < ApplicationController
   # POST /messages
   # POST /messages.json
   def create
-    @message = Message.new(message_params)
-    @message.user = current_user
+    # @message = Message.new(message_params)
+    @message = current_user.messages.build
+    @message.attributes = message_params
+    # @message.user = current_user
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to @message, notice: 'Message envoyé' }
-        format.json { render action: 'show', status: :created, location: @message }
+        format.html { redirect_to messages_path, notice: 'Message envoyé' }
+        format.json { render action: 'show', status: :created, location: messages_path }
       else
         format.html { render action: 'new' }
         format.json { render json: @message.errors, status: :unprocessable_entity }
