@@ -47,27 +47,30 @@
               .tabs-content
                 #tuiles.content
                 #messages.content.active
-                  %table
-                    %thead
-                      %tr
-                        %th Sujet
-                        %th Message
-                        %th Statut
-                        %th Date
-                    %tbody
-                      - @messages.each do |message|
-                        - if message.public
-                          %tr
-                            %td= message.title
-                            %td= message.content
-                            %td= message.public ? 'Public' : 'Privé'
-                            %td= message.created_at.to_formatted_s(:db)
-                        - else
-                          %tr.red
-                            %td= message.title
-                            %td= message.content
-                            %td= message.public ? 'Public' : 'Privé'
-                            %td= message.created_at.to_formatted_s(:db)
+                  - if @messages.length > 0
+                    %table
+                      %thead
+                        %tr
+                          %th Sujet
+                          %th Message
+                          %th Statut
+                          %th Date
+                      %tbody
+                        - @messages.each do |message|
+                          - if message.public
+                            %tr
+                              %td= message.title
+                              %td= message.content
+                              %td= message.public ? 'Public' : 'Privé'
+                              %td= message.created_at.to_formatted_s(:db)
+                          - else
+                            %tr.red
+                              %td= message.title
+                              %td= message.content
+                              %td= message.public ? 'Public' : 'Privé'
+                              %td= message.created_at.to_formatted_s(:db)
+                  - else
+                    %p.black Il n'y a rien ici.
 - else
   :javascript
     window.location.href="/"
