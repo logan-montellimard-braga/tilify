@@ -126,11 +126,11 @@ dd {
 }
 
 nav a{
-  color: white !important;
+  color: #707070 !important;
 }
 
 nav a:hover{
-  color: #ececec !important;
+  color: #151515 !important;
 }
 
 nav h1 {
@@ -255,4 +255,31 @@ footer p, footer h5 {
 
 #whyUDoDis p {
   color: #404040 !important;
+}
+
+#menu li, #menu li a:not(.searchButton) {
+  background-color: white;
+}
+
+#menu .button i {
+  color: white !important;
+}
+
+#menu .active a {
+  background-color: #008cba !important;
+  color: white !important;
+}
+
+#menu .active a:hover {
+  background-color: #007095 !important;
+  // color: #dfdfdf !important;
+}
+
+.top-bar, .top-bar-section ul {
+  background-color: white !important;
+  // border-bottom: 1px solid #dfdfdf;
+}
+
+#menu {
+  border-bottom: 1px solid #dfdfdf;
 }
