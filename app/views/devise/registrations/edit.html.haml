@@ -2,7 +2,7 @@
 .row
   .small-12.medium-8.columns.small-centered.formRow
     %h2.text-center
-      Modifier votre profil
+      Modifier mon profil
     = simple_form_for(resource, :as => resource_name, :url => registration_path(resource_name), :html => { :method => :put }) do |f|
       = f.error_notification
       .form-inputs
@@ -17,7 +17,10 @@
       .form-actions
         = f.button :submit, "Mettre à jour"
     %br
-    %h3 Supprimer mon compte
+    %hr
+    %h2.text-center Supprimer mon compte
+    %br
+    %br
     %p.redWarning
-      M&eacute;content ? #{link_to "Supprimer mon compte", registration_path(resource_name), :data => { :confirm => "Êtes-vous certain ?" }, :method => :delete}
+      M&eacute;content de nos services ? #{link_to "Supprimer mon compte.", registration_path(resource_name), :data => { :confirm => "Êtes-vous certain ?" }, :method => :delete}
     = link_to "Retour", root_path

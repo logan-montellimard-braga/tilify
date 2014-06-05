@@ -1,15 +1,73 @@
 - if (admin_signed_in? || ( user_signed_in? && current_user.id.to_s == params[:id]))
   - provide :title, 'Tilify - Profil ' + @user.username
   .row
-    .columns.small-10.small-centered.text-center.content
-      %h1>
+    .columns.small-10.small-centered.content
+      %h1.text-center>
         Profil de
-        = @user.username
+        %span.blue
+          = @user.username
       %br
       %br
 
-      = gravatar_for(@user)
-      = @user.email
+      .th
+        = gravatar_for(@user)
+      %p#features>
+        <strong>Nom d'utilisateur&nbsp;:</strong>
+        = @user.username
+        %br
+        <strong>Email&nbsp;:</strong>
+        = @user.email
+        %br
+        <strong>Inscription&nbsp;:</strong>
+        = @user.created_at.to_formatted_s(:db)
+        %br
+        <strong>Derni&egrave;re modification&nbsp;:</strong>
+        = @user.updated_at.to_formatted_s(:db)
+        %br
+        %br
+        %hr
+
+        %section#usersList
+          .row
+            .small-12.medium-9.columns.small-centered.text-center
+              %h2 Activit&eacute;
+              %br
+              %br
+              %ul.tabs{'data-tab' => ''}
+                %li.tab-title
+                  %a{:href => '#messages'}
+                    %i.fa.fa-comments
+                      &nbsp;
+                    Messages
+                %li.tab-title.active
+                  %a{:href => '#tuiles'}
+                    %i.fa.fa-square
+                      &nbsp;
+                    Tuiles
+              .tabs-content
+                #tuiles.content
+                #messages.content.active
+                  %table
+                    %thead
+                      %tr
+                        %th Sujet
+                        %th Message
+                        %th Statut
+                        %th Date
+                    %tbody
+                      - @messages.each do |message|
+                        - if message.public
+                          %tr
+                            %td= message.title
+                            %td= message.content
+                            %td= message.public ? 'Public' : 'Privé'
+                            %td= message.created_at.to_formatted_s(:db)
+                        - else
+                          %tr.red
+                            %td= message.title
+                            %td= message.content
+                            %td= message.public ? 'Public' : 'Privé'
+                            %td= message.created_at.to_formatted_s(:db)
 - else
   :javascript
     window.location.href="/"

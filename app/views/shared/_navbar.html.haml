@@ -26,10 +26,10 @@
               &nbsp;Contact
         - elsif !admin_signed_in?
           %li
-            %a{:href => '/contact'}
+            %a{:href => '/messages'}
               %i.fa.fa-envelope
               &nbsp;Contact
-        - if (current_page?(controller: 'devise/registrations', action: 'new') || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'edit') || admin_signed_in?)
+        - if (params[:controller] == 'users' || params[:controller] == 'devise/sessions' || current_page?(controller: 'devise/registrations', action: 'new') || current_page?(controller: 'devise/sessions', action: 'new') || current_page?(controller: 'devise/registrations', action: 'edit') || admin_signed_in?)
           %li.has-dropdown.active
             %a{:href => '#'}
               %i.fa.fa-user

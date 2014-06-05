@@ -65,6 +65,12 @@ h1, h2, h3, h4, h5, p, a {
   padding: 30px;
   margin-top: 30px;
   background-color: white;
+  overflow: hidden;
+  border-radius: 4px !important;
+}
+
+.formRow, .formRowNeuter {
+  border-radius: 4px !important;
 }
 
 .formRow h2, .formRow p, .formRow label {
@@ -287,4 +293,23 @@ blockquote h6 {
   -moz-box-sizing: border-box !important;
   -webkit-box-sizing: border-box !important;
   box-sizing: border-box !important;
+}
+
+.blue {
+  color: #008cba;
+  font-weight: bold;
+}
+
+.th {
+  margin-right: 10px !important;
+}
+
+input[type="checkbox"] {
+  margin-right: 1em !important;
+}
+
+
+tr.red td {
+  color: #d9543f !important;
+  font-weight: 600;
 }
