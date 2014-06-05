@@ -6,7 +6,7 @@ class User < ActiveRecord::Base
          :rememberable, :validatable, :authentication_keys => [:login]
   attr_accessor :login
 
-  has_many :messages
+  has_many :messages, :dependent => :destroy
 
   validates :username, :uniqueness => { :case_sensitive => false },
     exclusion: { in: %w(admin root tilify Admin Root Tilify), message: "%{value} est réservé." },
