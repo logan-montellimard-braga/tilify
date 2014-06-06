@@ -149,7 +149,11 @@ nav h1 {
 }
 
 nav h1 a:hover {
-  color: #008cba !important;
+  color: #085a78 !important;
+}
+
+nav .active a{
+  background-color: #085a78 !important;
 }
 
 nav input {
@@ -171,7 +175,7 @@ nav input {
 #welcome {
   padding: 40px 0px;
   width: 100%;
-  background-color: #008cba;
+  background-color: #085a78;
   border-bottom: 5px solid #bfbfbf;
 }
 
@@ -199,28 +203,43 @@ nav input {
 }
 
 footer {
-  background-color: #404040;
-  color: white !important;
-  padding: 25px;
-  margin-top: 40px;
+  // color: white !important;
   width: 100%;
-  text-align: right !important;
   border-top: 1px solid #707070;
   vertical-align: center;
 }
+
 
 footer h5 {
   color: white !important;
   font-weight: bold;
 }
 
-footer p, footer h5 {
-  font-size: 0.8rem;
-  line-height: 1rem;
+footer p, footer h5, footer a {
+  font-size: 0.9rem;
+  // line-height: 1rem;
+  color: white;
 }
 
+footer .footer-top {
+  padding-top: 25px;
+  padding-bottom: 5px;
+  background-color: #085a78 !important;
+  width: 100%;
+}
+
+footer .footer-top h5 {
+  margin-top: -5px;
+}
+
+footer .footer-middle {
+  background-color: #074e68;
+  padding: 30px 0px;
+}
+
+
 .footerLogo {
-  border-right: 1px solid #707070;
+  // border-right: 1px solid #085a78;
   padding: 25px;
   margin-bottom: 40px;
   text-align: left;
@@ -229,6 +248,46 @@ footer p, footer h5 {
 .footerLogo img {
   width: 150px;
   margin: auto !important;
+}
+
+.footer-bottom {
+  background-color: #333333;
+  padding: 25px 0px;
+}
+
+.footer-bottom a {
+  font-weight: bold;
+  color: #656565;
+  overflow: hidden;
+}
+
+.footerH {
+  font-size: 1.4rem !important;
+}
+
+.footer-bottom ul {
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.footer-bottom li {
+  display: inline !important;
+  list-style-type: none;
+  padding: 8px;
+  // font-variant: small-caps;
+  text-transform: uppercase;
+}
+
+.footer-bottom li a {
+  font-size: 0.8rem!important;
+}
+
+.footer-bottom a:hover {
+  color: #808080;
+}
+
+.footer-bottom li:first-child {
+  padding-left: 1px !important;
 }
 
 .contactText {
@@ -249,7 +308,7 @@ footer p, footer h5 {
 }
 
 #usersList h1 a:hover {
-  color: #008cba !important;
+  color: #085a78 !important;
 }
 
 .adminWelcome a {
@@ -286,7 +345,7 @@ blockquote p {
 
 blockquote h6 {
   background-color: transparent !important;
-  color: #008cba !important;
+  color: #085a78 !important;
 }
 
 .masonry, .masonry:before, .masonry:after {
@@ -296,7 +355,7 @@ blockquote h6 {
 }
 
 .blue {
-  color: #008cba;
+  color: #085a78;
   font-weight: bold;
 }
 
@@ -316,4 +375,39 @@ tr.red td {
 
 .black {
   color: #404040 !important;
+}
+
+.features p, .features h5 {
+  text-align: center;
+  vertical-align: center;
+  margin: auto;
+  color: white !important;
+}
+
+.concept {
+  padding: 0px 30px !important;
+  margin: 15px 0px;
+}
+
+@media screen and (min-width: 40em) {
+  .concept {
+    border-right: 1px solid #085a78;
+  }
+  .concept:first-child {
+    border-left: 1px solid #085a78;
+  }
+  .concept:last-child {
+    border-right: 1px solid transparent;
+  }
+}
+
+.social {
+  text-align: right;
+}
+
+.copyright {
+  color: #656565 !important;
+  margin-bottom: 5px !important;
+  font-size: 0.75rem !important;
+  padding-left: 15px !important;
 }
