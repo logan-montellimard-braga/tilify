@@ -17,6 +17,11 @@ class MessagesController < ApplicationController
   # GET /messages/1
   # GET /messages/1.json
   def show
+    unless @message.public
+      unless current_user.id == @message.user_id || admin_signed_in?
+        redirect_to root_url, alert: "Vous n'avez pas l'autorisation de visualiser ce message"
+      end
+    end
   end
 
   # GET /messages/new
@@ -41,8 +46,8 @@ class MessagesController < ApplicationController
 
     respond_to do |format|
       if @message.save
-        format.html { redirect_to messages_path, notice: 'Message envoyé' }
-        format.json { render action: 'show', status: :created, location: messages_path }
+        format.html { redirect_to @message, notice: 'Message envoyé' }
+        format.json { render action: 'show', status: :created, location: @message }
       else
         format.html { render action: 'new' }
         format.json { render json: @message.errors, status: :unprocessable_entity }
@@ -81,7 +86,12 @@ class MessagesController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_message
-      @message = Message.find(params[:id])
+      unless @message = Message.where(id: params[:id]).first
+        flash[:alert] = 'Message non trouvé'
+        redirect_to root_url
+      else
+        @message = Message.find(params[:id])
+      end
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
