@@ -405,11 +405,14 @@ tr.red td {
   text-align: right;
 }
 
-.copyright {
-  color: #656565 !important;
-  margin-bottom: 5px !important;
-  font-size: 0.75rem !important;
+.adminlink a{
+  font-size: 0.85rem !important;
   padding-left: 15px !important;
+  font-weight: normal !important;
+}
+
+.adminlink {
+  margin-bottom: 0px;
 }
 
 nav .dropdown a {
