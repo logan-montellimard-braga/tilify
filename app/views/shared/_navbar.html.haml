@@ -72,13 +72,3 @@
               - else
                 %li= link_to('Connexion', new_user_session_path)
                 %li= link_to('Inscription', new_user_registration_path)
-
-
-      %ul.right.show-for-large-up
-        %li.has-form
-          .row.collapse
-            .columns.small-8
-              %input{:type => 'text', :placeholder => 'Rechercher...'}
-            .columns.small-4
-              %a.searchButton.button{:href => '#'}
-                %i.fa.fa-search
