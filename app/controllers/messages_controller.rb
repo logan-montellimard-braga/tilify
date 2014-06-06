@@ -18,7 +18,7 @@ class MessagesController < ApplicationController
   # GET /messages/1.json
   def show
     unless @message.public
-      unless current_user.id == @message.user_id || admin_signed_in?
+      unless admin_signed_in? || current_user.id == @message.user_id
         redirect_to root_url, alert: "Vous n'avez pas l'autorisation de visualiser ce message"
       end
     end
