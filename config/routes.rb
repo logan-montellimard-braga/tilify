@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   match '/contact' => 'messages#new', :via => :get
-  resources :messages, only: [:index, :create, :new]
+  resources :messages
 
   devise_for :admins
   get '/admin' => 'adminpanel#index', :as => :adminpanel_index

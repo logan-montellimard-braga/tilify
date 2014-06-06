@@ -1,7 +1,15 @@
-%h1 Editing message
+- provide :title, 'Tilify - Modifier le message'
 
-= render 'form'
+.row
+  .small-12.medium-8.columns.small-centered.formRow
+    %h2.text-center Modifier le message
 
-= link_to 'Show', @message
-\|
-= link_to 'Back', messages_path
+    = render 'form'
+
+    %p
+      = link_to 'Afficher', @message
+      \|
+      = link_to 'Retour', messages_path
+      \|
+      %span.redWarning
+        = link_to 'Supprimer', @message, :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }

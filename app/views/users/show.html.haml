@@ -34,12 +34,12 @@
               %br
               %br
               %ul.tabs{'data-tab' => ''}
-                %li.tab-title
+                %li.tab-title.active
                   %a{:href => '#messages'}
                     %i.fa.fa-comments
                       &nbsp;
                     Messages
-                %li.tab-title.active
+                %li.tab-title
                   %a{:href => '#tuiles'}
                     %i.fa.fa-square
                       &nbsp;
@@ -59,13 +59,13 @@
                         - @messages.each do |message|
                           - if message.public
                             %tr
-                              %td= message.title
+                              %td= link_to message.title, message
                               %td= message.content
                               %td= message.public ? 'Public' : 'Privé'
                               %td= message.created_at.to_formatted_s(:db)
                           - else
                             %tr.red
-                              %td= message.title
+                              %td= link_to message.title, message
                               %td= message.content
                               %td= message.public ? 'Public' : 'Privé'
                               %td= message.created_at.to_formatted_s(:db)

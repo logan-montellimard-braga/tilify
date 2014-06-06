@@ -15,7 +15,8 @@
       .gallerie.small-centered.columns.small-10
         - @messages.each do |message|
           .columns.small-8.medium-5.large-4.myMasonry
-            %blockquote
-              %h6= message.title
-              %p= message.content
-              %cite= getUserById(message.user_id).username
+            = link_to(message) do
+              %blockquote
+                %h6= message.title
+                %p= message.content
+                %cite= getUserById(message.user_id).username

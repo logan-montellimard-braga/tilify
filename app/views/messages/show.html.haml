@@ -1,15 +1,33 @@
+- provide :title, 'Tilify - Message "' + @message.title + '"'
+
 %p#notice= notice
 
-%p
-  %b Title:
-  = @message.title
-%p
-  %b Content:
-  = @message.content
-%p
-  %b Public:
-  = @message.public
+.row
+  .columns.small-10.small-centered.content
+    %h1.text-center>
+      Affichage du message
+      - unless @message.public
+        (priv&eacute;)
+    %br
+    %br
 
-= link_to 'Edit', edit_message_path(@message)
-\|
-= link_to 'Back', messages_path
+    %blockquote.noHover
+      %h6= @message.title
+      %p= @message.content
+      %cite>
+        = getUserById(@message.user_id).username
+        , le
+        = @message.created_at.to_formatted_s(:db)
+      - if @message.created_at.to_formatted_s(:db) != @message.updated_at.to_formatted_s(:db)
+        %cite>
+          &Eacute;dit&eacute; le 
+          = @message.updated_at.to_formatted_s(:db)
+
+    %br
+    .row
+      .columns.small-centered.text-center
+        - if (admin_signed_in? || current_user.id == @message.user_id)
+          = link_to 'Modifier', edit_message_path(@message), class: 'button'
+          = link_to 'Supprimer', message_path(@message), class: 'button alert', :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }
+        %br
+        = link_to 'Retour', messages_path

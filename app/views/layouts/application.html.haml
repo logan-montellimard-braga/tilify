@@ -20,8 +20,8 @@
     = render "shared/flash.html.haml"
     = yield
     - if Rails.env.development?
-      -# .debug
-      -#   = debug(params)
+      .debug
+        = debug(params)
     %br
     %br
     %br

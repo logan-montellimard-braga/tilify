@@ -11,13 +11,17 @@
             %th Sujet
             %th Message
             %th Date
+            %th Supprimer
         %tbody
           - @private_messages.each do |message|
             %tr
               %td= User.find_by_id(message.user_id).username
-              %td= message.title
+              %td= link_to message.title, message
               %td= message.content
               %td= message.created_at.to_formatted_s(:db)
+              %td>
+                %spa.redWarning
+                  = link_to 'Supprimer', message, :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }
   - else
     %p.black Il n'y a rien ici !
   %br
@@ -35,12 +39,16 @@
             %th Sujet
             %th Message
             %th Date
+            %th Supprimer
         %tbody
           - @public_messages.each do |message|
             %tr
               %td= User.find_by_id(message.user_id).username
-              %td= message.title
+              %td= link_to message.title, message
               %td= message.content
               %td= message.created_at.to_formatted_s(:db)
+              %td>
+                %span.redWarning
+                  = link_to 'Supprimer', message, :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }
   - else
     %p.black Il n'y a rien ici !

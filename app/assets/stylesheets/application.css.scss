@@ -333,7 +333,7 @@ blockquote {
   padding: 20px;
 }
 
-blockquote:hover {
+blockquote:hover:not(.noHover) {
   background-color: #efefef !important;
 }
 
@@ -346,6 +346,9 @@ blockquote p {
 blockquote h6 {
   background-color: transparent !important;
   color: #085a78 !important;
+}
+blockquote:hover:not(.noHover) h6 {
+  color: #008cba !important;
 }
 
 .masonry, .masonry:before, .masonry:after {

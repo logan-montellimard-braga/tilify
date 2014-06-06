@@ -1,6 +1,11 @@
 class MessagesController < ApplicationController
   before_action :set_message, only: [:show, :edit, :update, :destroy]
-  before_action :authenticate_user!
+  # before_action :authenticate_user!
+  before_action :verify_identity
+
+  def verify_identity
+    admin_signed_in? ? true : authenticate_user!
+  end
 
   # GET /messages
   # GET /messages.json
@@ -44,24 +49,28 @@ class MessagesController < ApplicationController
 
   # PATCH/PUT /messages/1
   # PATCH/PUT /messages/1.json
-  # def update
-  #   respond_to do |format|
-  #     if @message.update(message_params)
-  #       format.html { redirect_to @message, notice: 'Message modifié' }
-  #       format.json { head :no_content }
-  #     else
-  #       format.html { render action: 'edit' }
-  #       format.json { render json: @message.errors, status: :unprocessable_entity }
-  #     end
-  #   end
-  # end
+  def update
+    respond_to do |format|
+      if @message.update(message_params)
+        format.html { redirect_to @message, notice: 'Message modifié' }
+        format.json { head :no_content }
+      else
+        format.html { render action: 'edit' }
+        format.json { render json: @message.errors, status: :unprocessable_entity }
+      end
+    end
+  end
 
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
     @message.destroy
     respond_to do |format|
-      format.html { redirect_to messages_url }
+      if admin_signed_in?
+        format.html { redirect_to :back, notice: 'Message supprimé' }
+      else
+        format.html { redirect_to messages_url, notice: 'Message supprimé' }
+      end
       format.json { head :no_content }
     end
   end
