@@ -83,7 +83,6 @@ class TuilesController < ApplicationController
       else
         @tuile = Tuile.find(params[:id])
       end
-      @tuile = Tuile.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
