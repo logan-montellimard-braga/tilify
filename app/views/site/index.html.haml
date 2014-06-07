@@ -9,14 +9,12 @@
         %p
           <strong>Tilify</strong>, c'est le nouveau moyen communautaire de chercher, partager et archiver les meilleurs liens du Web, dans des domaines vari&eacute;s et modernes qui <em>vous</em> int&eacute;ressent&nbsp;!
         %br
-        - if (!user_signed_in? && !admin_signed_in?)
-          = link_to "Se connecter", new_user_session_path, :class => 'button secondary'
-          &nbsp;
-          = link_to "S'inscrire", new_user_registration_path, :class => 'button secondary'
-          %br
-          %br
-        - if admin_signed_in?
-          %p Bonjour, <strong>Admin</strong> !
+        .row
+          .columns.medium-12.small-centered
+            - if (!user_signed_in? && !admin_signed_in?)
+              = link_to "Se connecter", new_user_session_path, :class => 'button'
+              = link_to "S'inscrire", new_user_registration_path, :class => 'button secondary'
+          = link_to 'Documentation', aide_path
 
 %section#features
   .row.text-center{'data-equalizer' => ''}
