@@ -3,7 +3,7 @@ class User < ActiveRecord::Base
   # :token_authenticatable, :confirmable,
   # :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
-         :rememberable, :validatable, :authentication_keys => [:login]
+         :rememberable, :recoverable, :validatable, :authentication_keys => [:login]
   attr_accessor :login
 
   has_many :messages, :dependent => :destroy
