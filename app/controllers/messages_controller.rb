@@ -34,6 +34,9 @@ class MessagesController < ApplicationController
 
   # GET /messages/1/edit
   def edit
+    unless admin_signed_in? || current_user.id == @message.user_id
+      redirect_to root_url, alert: "Vous ne pouvez pas modifier un message qui ne vous appartient pas."
+    end
   end
 
   # POST /messages
