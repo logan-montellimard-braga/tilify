@@ -7,6 +7,8 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
     @messages = @user.messages
     @messages = @messages.reverse
+    @tuiles = @user.tuiles
+    @tuiles = @tuiles.reverse
   end
 
   def destroy
