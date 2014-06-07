@@ -1,0 +1,27 @@
+%h1 Listing tuiles
+
+%table
+  %tr
+    %th Lien
+    %th Image
+    %th Titre
+    %th Description
+    %th Type
+    %th
+    %th
+    %th
+
+  - @tuiles.each do |tuile|
+    %tr
+      %td= tuile.lien
+      %td= tuile.image
+      %td= tuile.titre
+      %td= tuile.description
+      %td= tuile.forme
+      %td= link_to 'Show', tuile
+      %td= link_to 'Edit', edit_tuile_path(tuile)
+      %td= link_to 'Destroy', tuile, :method => :delete, :data => { :confirm => 'Are you sure?' }
+
+%br
+
+= link_to 'New Tuile', new_tuile_path

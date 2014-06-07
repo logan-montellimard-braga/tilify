@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :tuiles
+
   match '/contact' => 'messages#new', :via => :get
   resources :messages
 

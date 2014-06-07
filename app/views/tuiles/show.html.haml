@@ -1,0 +1,29 @@
+- provide :title, 'Tilify - Tuile "' + @tuile.titre + '"'
+
+%p#notice= notice
+
+.row
+  .columns.small-10.small-centered.content
+    %h1.text-center>
+      Affichage de la tuile
+    %br
+    %br
+
+    %blockquote.noHover
+      %h6= @tuile.titre
+      %p= @tuile.description
+      %cite>
+        = @tuile.created_at.to_formatted_s(:db)
+      - if @tuile.created_at.to_formatted_s(:db) != @tuile.updated_at.to_formatted_s(:db)
+        %cite>
+          &Eacute;dit&eacute; le 
+          = @tuile.updated_at.to_formatted_s(:db)
+
+    %br
+    .row
+      .columns.small-centered.text-center
+        - if (admin_signed_in? || current_user.id == @tuile.user_id)
+          = link_to 'Modifier', edit_tuile_path(@tuile), class: 'button'
+          = link_to 'Supprimer', tuile_path(@tuile), class: 'button alert', :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }
+        %br
+        = link_to 'Retour', tuiles_path

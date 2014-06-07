@@ -7,6 +7,7 @@ class User < ActiveRecord::Base
   attr_accessor :login
 
   has_many :messages, :dependent => :destroy
+  has_many :tuiles, :dependent => :destroy
 
   validates :username, :uniqueness => { :case_sensitive => false },
     exclusion: { in: %w(admin root tilify Admin Root Tilify), message: "%{value} est réservé." },

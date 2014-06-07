@@ -1,0 +1,14 @@
+- provide :title, 'Tilify - Modifier la tuile'
+
+.row
+  .small-12.medium-8.columns.small-centered.formRow
+    %h2.text-center Modifier la tuile
+
+    = render 'form'
+    %p
+      = link_to 'Afficher', @tuile
+      \|
+      = link_to 'Retour', tuiles_path
+      \|
+      %span.redWarning
+        = link_to 'Supprimer', @tuile, :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }
