@@ -1,7 +1,7 @@
 - if (admin_signed_in? || ( user_signed_in? && current_user.id.to_s == params[:id]))
   - provide :title, 'Tilify - Profil ' + @user.username
   .row
-    .columns.small-10.small-centered.content
+    .columns.medium-10.small-centered.content
       %h1.text-center>
         Profil de
         %span.blue
@@ -35,40 +35,85 @@
               %br
               %ul.tabs{'data-tab' => ''}
                 %li.tab-title.active
-                  %a{:href => '#messages'}
-                    %i.fa.fa-comments
-                      &nbsp;
-                    Messages
-                %li.tab-title
                   %a{:href => '#tuiles'}
                     %i.fa.fa-square
                       &nbsp;
                     Tuiles
+                %li.tab-title
+                  %a{:href => '#messages'}
+                    %i.fa.fa-comments
+                      &nbsp;
+                    Messages
               .tabs-content
-                #tuiles.content
-                #messages.content.active
+                #tuiles.content.active
+                  - if @tuiles.length > 0
+                    .tuilesIndex
+                      .columns.medium-10.small-centered
+                        #masonry-container.transitions-enabled.clearfix.centered
+                          .row
+                            .gallerie.small-centered.columns.medium-10
+                              - @tuiles.each do |tuile|
+                                = link_to tuile do
+                                  - n = rand(1..2)
+                                  .masonWrapper
+                                    .columns.text-center.small-12.medium-12.large-6.myMasonry{:class => 'tuile' + n.to_s}
+                                      %h3= tuile.titre
+                                      = image_tag 'image.png'
+                                      %p= tuile.description
+                  - else
+                    %p.black Il n'y a rien ici.
+                    -# %table
+                    -#   %thead
+                    -#     %tr
+                    -#       %th Titre
+                    -#       %th Lien
+                    -#       %th Description
+                    -#       %th Type
+                    -#       %th Date
+                    -#   %tbody
+                    -#     - @tuiles.each do |tuile|
+                    -#       %tr
+                    -#         %td= link_to tuile.titre, tuile
+                    -#         %td= link_to 'Lien', tuile.lien
+                    -#         %td= tuile.description
+                    -#         %td= tuile.forme
+                    -#         %td= tuile.created_at.to_formatted_s(:db)
+                  -# - else
+                    -# %p.black Il n'y a rien ici.
+
+                #messages.content
                   - if @messages.length > 0
-                    %table
-                      %thead
-                        %tr
-                          %th Sujet
-                          %th Message
-                          %th Statut
-                          %th Date
-                      %tbody
-                        - @messages.each do |message|
-                          - if message.public
-                            %tr
-                              %td= link_to message.title, message
-                              %td= message.content
-                              %td= message.public ? 'Public' : 'Privé'
-                              %td= message.created_at.to_formatted_s(:db)
-                          - else
-                            %tr.red
-                              %td= link_to message.title, message
-                              %td= message.content
-                              %td= message.public ? 'Public' : 'Privé'
-                              %td= message.created_at.to_formatted_s(:db)
+                    #masonry-container.transitions-enabled.clearfix.centered
+                      .row
+                        .gallerie.small-centered.columns.medium-10
+                          - @messages.each do |message|
+                            .columns.small-12.medium-12.large-6.myMasonry
+                              = link_to(message) do
+                                %blockquote
+                                  %h6{class: message.public ? '' : 'red' }= message.title
+                                  %p= message.content
+                                  %cite= getUserById(message.user_id).username
+                    -# %table
+                    -#   %thead
+                    -#     %tr
+                    -#       %th Sujet
+                    -#       %th Message
+                    -#       %th Statut
+                    -#       %th Date
+                    -#   %tbody
+                    -#     - @messages.each do |message|
+                    -#       - if message.public
+                    -#         %tr
+                    -#           %td= link_to message.title, message
+                    -#           %td= message.content
+                    -#           %td= message.public ? 'Public' : 'Privé'
+                    -#           %td= message.created_at.to_formatted_s(:db)
+                    -#       - else
+                    -#         %tr.red
+                    -#           %td= link_to message.title, message
+                    -#           %td= message.content
+                    -#           %td= message.public ? 'Public' : 'Privé'
+                    -#           %td= message.created_at.to_formatted_s(:db)
                   - else
                     %p.black Il n'y a rien ici.
 - else
