@@ -1,0 +1,162 @@
+- provide :title, 'Tilify - Aide'
+%section#welcome
+  .row
+    .columns.small-12.medium-10.small-centered
+      .text-center
+        %h1 Besoin d'aide ?
+        %br
+        %br
+        %br
+        %p
+          Nous faisons de notre mieux pour rendre l'exp&eacute;rience utilisateur la plus agr&eacute;able et intuitive possible.
+          %br
+          Mais si &ccedil;a ne suffit pas, vous pouvez d&eacute;couvrir notre documentation extensive du projet ci-dessous.
+          %br
+          %br
+          Ou pour les plus press&eacute;s, b&eacute;n&eacute;ficiez d'une <strong>visite guid&eacute;e</strong> r&eacute;sum&eacute;e... Royal !
+        %br
+        %button.button.secondary.joyRideButton Lancer la visite guid&eacute;e
+
+
+%section#features
+  .columns.small-12.medium-8.small-centered
+    .row
+      %h2#searchTuiles.text-center Les Tuiles
+      %br
+      %br
+      %p.text-center
+        Les tuiles sont le cœur du site web&nbsp;; ce sont elles qui contiennent les liens, leurs descriptions et toutes les fonctionnalit&eacute;s indispensables qu'on leur accorde !
+    %br
+    %br
+    %br
+
+    .row
+      %h4.text-center Rechercher
+      %br
+      .columns.medium-8.text-right
+        %p#rechercher
+          Vous pouvez utiliser la barre de recherche int&eacute;gr&eacute;e pour trier efficacement les tuiles. Entrez vos mots-cl&eacute;s, tags, titres, domaines, ...
+          %br
+          La recherche est effectu&eacute;e sur les tags accroch&eacute;s aux tuiles, sur leurs titres, sur leur contenu et sur l'URL vers laquelle elles dirigent.
+      .columns.medium-4
+        = image_tag 'http://placehold.it/300x300'
+    %br
+    %br
+
+    .row
+      %h4.text-center Partager
+      %br
+      .columns.medium-4
+        = image_tag 'http://placehold.it/300x300'
+      .columns.medium-8
+        %p#partager
+          Si vous pensez avoir un lien vers une ressource qui pourrait servir &agrave; d'autres personnes, n'h&eacute;sitez pas&nbsp;! Soumettez votre tuile en utilisant le formulaire adapt&eacute;.
+          %br
+          Il vous sera demand&eacute; de remplir un titre, une adresse URL vers la ressource et une adresse URL vers une image l'illustrant, un court r&eacute;sum&eacute; et des tags.
+        %br
+        %h6 R&egrave;gles de soumission
+        %ul
+          %li Utilisez un titre fort, explicite et concis. &Eacute;vitez les titres abstraits. N'employez pas le mot 'lien' dans le titre : nous savons que c'est un lien !
+          %li Donnez un lien vers la ressource brute : pas d'ancrage superflu, pas de redirection, pas d'iframe embarqu&eacute;e.
+          %li Utilisez une image illustrative tout publique.
+          %li R&eacute;digez un r&eacute;sum&eacute; explicite et concis, en quelques lignes. Ne rentrez pas dans les d&eacute;tails mais fournissez-en assez pour acc&eacute;l&eacute;rer la recherche de vos pairs.
+    %br
+    %br
+
+    .row
+      %h4.text-center Archiver
+      %br
+      .columns.medium-8.text-right
+        %p#archiver
+          Si vous tombez sur une ressource int&eacute;ressante, ajoutez-l&agrave; &agrave; vos favoris personnels. Vos favoris restent li&eacute;s &agrave; votre compte et accessibles depuis n'importe quelle machine. Seul vous pouvez les voir et les g&eacute;rer.
+      .columns.medium-4
+        = image_tag 'http://placehold.it/300x300'
+    %br
+    %br
+    %br
+
+    %hr
+    %br
+    %br
+    %br
+
+  .columns.small-12.medium-8.small-centered
+    .row
+      %h2.text-center Les Messages
+      %br
+      %br
+      %p.text-center
+        Les messages sont une des fonctionnalit&eacute;s suppl&eacute;mentaires du site. Nous arborons avec fiert&eacute; le drapeau de <strong>site communautaire</strong>, et nous le montrons !
+        %br
+        Seulement vous et les administrateurs peuvent les &eacute;diter et les supprimer.
+    %br
+    %br
+    %br
+
+    .row#rechercher
+      %h4.text-center Publics
+      %br
+      .columns.medium-4
+        = image_tag 'http://placehold.it/300x300'
+      .columns.medium-8
+        %p#mPublics
+          Les messages publics sont les messages que vous laissez &agrave; l'ensemble de la communaut&eacute; Tilify. Ils sont visibles par tous les membres inscrits.
+          %br
+          Vous pouvez voir cette fonctionnalit&eacute; comme un <strong>livre d'or</strong> de l'application !
+          %br
+          Vous pouvez rendre un message public en cochant la case 'Public' dans son formulaire d'envoi ou d'&eacute;dition.
+
+    %br
+    %br
+
+    .row
+      %h4.text-center Priv&eacute;s
+      %br
+      .columns.medium-8.text-right
+        %p#mPrives
+          Les messages priv&eacute;s sont un moyen de contacter les administrateurs de fa&ccedil;on interne. Ils ne sont visibles que par vous-m&ecirc;me et par leur &eacute;quipe.
+          %br
+          Par d&eacute;faut, tous les messages sont priv&eacute;s si vous ne cochez pas la case 'Public' dans leurs formulaires d'envoi ou d'&eacute;dition.
+      .columns.medium-4
+        = image_tag 'http://placehold.it/300x300'
+    %br
+
+
+%ol.joyride-list{'data-joyride' => ''}
+  %li{'data-button' => "C'est parti !"}
+    %h6 Les tuiles
+    %p Les tuiles sont le coeur m&ecirc;me de Tilify. Voyons comment elles marchent.
+
+  %li{'data-id' => 'rechercher', 'data-text' => 'Suivant', 'data-options' => 'tip_location: bottom'}
+    %h6 Chercher dans les tuiles
+    %p Vous pouvez filtrer les tuiles pr&eacute;sent&eacute;es en cherchant des tags ou mots-cl&eacute;s dans la barre de recherche.
+
+  %li{'data-id' => 'partager', 'data-text' => 'Suivant', 'data-options' => 'tip_location: bottom'}
+    %h6 Soumettre vos tuiles
+    %p Vous pouvez proposer vos propres ressources utiles en remplissant un simple formulaire. Soyez concis et explicites !
+
+  %li{'data-id' => 'archiver', 'data-text' => 'Suivant', 'data-options' => 'tip_location: bottom'}
+    %h6 Conserver vos tuiles pr&eacute;f&eacute;r&eacute;es
+    %p Vous pouvez archiver les meilleures ressources en cliquant sur le lien d'ajout dans les favoris.
+
+  %li{'data-button' => 'Suivant'}
+    %p C'est tout pour les tuiles !
+
+
+  %li{'data-button' => "C'est parti !"}
+    %h6 Les messages
+    %p Les messages permettent d'acentuer l'aspect communautaire de Tilify. Voyons comment ils marchent.
+
+  %li{'data-id' => 'mPublics', 'data-text' => 'Suivant', 'data-options' => 'tip_location: bottom'}
+    %h6 Les messages publics
+    %p Ce sont les messages que toute la communaut&eacute; (membres inscrits) peut visualiser. Un peu comme un livre d'or, en fait !
+
+  %li{'data-id' => 'mPrives', 'data-text' => 'Suivant', 'data-options' => 'tip_location: bottom'}
+    %h6 Les messages priv&eacute;s
+    %p Ce sont les messages que seuls leur auteur et les administrateurs peuvent visualiser. Ils permettent de contacter l'&eacute;quipe administrative pour des sujets sensibles ou des taches de maintenance.
+
+  %li{'data-button' => 'Okay !'}
+    %p C'est tout pour les messages !
+
+  %li{'data-button' => 'Fin'}
+    %p Voil&agrave;, la visite guid&eacute;e est termin&eacute;e. Si vous avez toujours des questions, vous pouvez lire la documentation compl&egrave;te sur cette page ou nous contacter.

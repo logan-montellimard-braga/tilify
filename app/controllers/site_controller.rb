@@ -4,4 +4,7 @@ class SiteController < ApplicationController
     #   redirect_to adminpanel_index_path, notice: "Redirection vers le panel administrateur..."
     # end
   end
+
+  def aide
+  end
 end

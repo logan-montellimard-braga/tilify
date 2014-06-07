@@ -23,6 +23,13 @@ $(function($){
     $('.blankPage').fadeOut('slow');
 
     $(document).foundation();
+    $('.joyRideButton').click(function() {
+      var target = $('#searchTuiles');
+      $('html, body').animate({ scrollTop: $(target).offset().top }, 1200);
+      setTimeout(function() {
+        $(document).foundation('joyride', 'start');
+      }, 1000);
+    })
 
     $('.goToTop').click(function(e) {
       e.preventDefault();

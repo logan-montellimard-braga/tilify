@@ -8,7 +8,9 @@ Rails.application.routes.draw do
 
   root 'site#index'
   get 'site/index'
+  get 'site/aide'
   get '/index' => 'site#index'
+  get '/aide' => 'site#aide'
 
   devise_for :users
   match 'users/:id' => 'users#destroy', :via => :delete, :as => :admin_destroy_user
