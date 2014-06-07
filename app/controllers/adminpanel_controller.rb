@@ -3,10 +3,9 @@ class AdminpanelController < ApplicationController
   def index
     @users = User.all
     @admins = Admin.all
-    @public_messages = Message.where(:public => true)
-    @public_messages = @public_messages.reverse
-    @private_messages = Message.where(:public => false)
-    @private_messages = @private_messages.reverse
+    @public_messages = Message.where(:public => true).reverse
+    @private_messages = Message.where(:public => false).reverse
+    @tuiles = Tuile.all.reverse
   end
 
   def users

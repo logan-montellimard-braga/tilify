@@ -66,11 +66,11 @@ h1, h2, h3, h4, h5, p, a {
   margin-top: 30px;
   background-color: white;
   overflow: hidden;
-  border-radius: 4px !important;
+  // border-radius: 4px !important;
 }
 
 .formRow, .formRowNeuter {
-  border-radius: 4px !important;
+  // border-radius: 4px !important;
 }
 
 .formRow h2, .formRow p, .formRow label {
@@ -162,6 +162,9 @@ nav input {
 
 .formRow small, .formRowNeuter small {
   color: #e74c3c !important;
+  font-weight: bold !important;
+  display: block;
+  margin: 5px 0 10px 0 !important;
 }
 
 .debug {
@@ -179,7 +182,7 @@ nav input {
   border-bottom: 5px solid #bfbfbf;
 }
 
-#welcome h1, h2, h3, h4, p {
+#welcome h1, h2, h3, h4, h5, h6, p {
   color: white !important;
 }
 
@@ -346,7 +349,7 @@ blockquote {
 }
 
 blockquote:hover:not(.noHover) {
-  background-color: #efefef !important;
+  // background-color: #efefef !important;
 }
 
 blockquote p {
@@ -385,6 +388,11 @@ input[type="checkbox"] {
 
 tr.red td {
   color: #d9543f !important;
+  font-weight: 600;
+}
+
+.red {
+  color: #d9543F !important;
   font-weight: 600;
 }
 
@@ -442,4 +450,97 @@ nav .dropdown a {
 
 nav .dropdown a:hover {
   background-color: #252525 !important;
+}
+
+
+.tuilesIndex .myMasonry {
+  margin: 0.4rem;
+  color: white !important;
+}
+
+.tuile1 {
+  background-color: #085a78;
+}
+
+
+#tiles {
+  margin: 0px 0 20px 0 !important;
+}
+
+
+.gallerie p {
+  text-align: justify !important;
+}
+
+.gallerie {
+  margin: 2% 0;
+}
+
+.myMasonry {
+  // background-color: #2980b9;
+  border: transparent solid 4px;
+  opacity: 1;
+  -webkit-transition: all 0.2s ease;
+  -moz-transition: all 0.2s ease;
+  -ms-transition: all 0.2s ease;
+  -o-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+}
+
+.myMasonry img {
+  margin-top: 14%;
+  margin-bottom: 14%;
+  margin-left: 4%;
+  margin-right: 4%;
+  width: 70%;
+}
+
+.myMasonry h3 {
+  margin-top: 8%;
+  color: white;
+  font-weight: 500;
+  font-size: 1.3em;
+}
+
+.myMasonry p {
+  color: #bdc3c7;
+  font-weight: 300; 
+}
+
+.masonWrapper {
+  color: white !important;
+  padding: 0.4rem;
+}
+
+.masonWrapper:hover p, .masonWrapper:hover h3{
+  color: rgba(255,255,255,0.5) !important;
+}
+
+.docu {
+  color: rgba(255,255,255,0.3) !important;
+}
+.docu:hover {
+  color: rgba(255,255,255,0.7) !important;
+}
+
+.tuile2 {
+  background-color: #074e68;
+}
+
+.tuilesIndex h5, .tuilesIndex h6 {
+  color: white !important;
+}
+
+#searchInTiles {
+  padding: 40px 0 0 0;
+  // background-color: #aeaeae;
+}
+
+.blackbutton {
+  background-color: #333333;
+  color: white;
+}
+
+.blackbutton:hover {
+  background-color: #151515;
 }

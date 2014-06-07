@@ -7,7 +7,7 @@
     = f.input :image
     = f.input :titre
     = f.input :description, :input_html => { :rows => 10, :maxlength => 300 }
-    = f.input :forme, :as => :select, :collection => available_types, :prompt => true
+    = f.input :forme, :as => :select, :collection => available_types.map(&:capitalize), :prompt => true
 
   .form-actions
     = f.button :submit, 'Envoyer'
