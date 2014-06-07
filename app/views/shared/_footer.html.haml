@@ -65,6 +65,25 @@
               %br
               %p
                 Conservez efficacement les liens qui vous plaisent vraiment pour les retrouver facilement.
+    .row.helpLinks
+      .medium-11.columns.small-centered
+        %hr
+      %br
+      .medium-4.columns.text-center.helpCol
+        %a.goToTop{:href => '#top'}
+          %i.fa.fa-chevron-up
+          &nbsp;
+          Haut de page
+      .medium-4.columns.text-center.helpCol
+        %a{:href => '#'}
+          %i.fa.fa-life-ring
+          &nbsp;
+          Besoin d'aide&nbsp;?
+      .medium-4.columns.text-center.helpCol
+        = mail_to "contact@tilify.fr" do
+          %i.fa.fa-paper-plane
+          &nbsp;
+          Contact direct
 
   .footer-bottom
     .row

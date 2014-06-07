@@ -21,11 +21,18 @@ $(function($){
 
   $(document).ready(function() {
     $('.blankPage').fadeOut('slow');
+
     $(document).foundation();
+
+    $('.goToTop').click(function(e) {
+      e.preventDefault();
+      $('html, body').animate({ scrollTop: 0 }, 600);
+    })
   });
 
   $('#masonry-container').masonry({
     itemSelector: '.myMasonry',
     isAnimated: !Modernizr.csstransitions,
   });
+
 }(jQuery));

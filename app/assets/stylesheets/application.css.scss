@@ -295,6 +295,18 @@ footer .footer-middle {
   vertical-align: center;
 }
 
+.helpLinks hr {
+  border-top: 1px solid #085a78 !important;
+}
+
+
+.helpLinks a{
+  color: rgba(255,255,255,0.3) !important;
+}
+.helpLinks a:hover{
+  color: rgba(255,255,255,0.7) !important;
+}
+
 #usersList {
   margin: 40px 0px;
 }
@@ -401,6 +413,12 @@ tr.red td {
   }
   .concept:last-child {
     border-right: 1px solid transparent;
+  }
+}
+
+@media screen and (max-width: 40em) {
+  .helpLinks .helpCol {
+    margin-bottom: 15px;
   }
 }
 
