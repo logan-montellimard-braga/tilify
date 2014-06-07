@@ -15,7 +15,8 @@
         %tbody
           - @private_messages.each do |message|
             %tr
-              %td= User.find_by_id(message.user_id).username
+              - user = User.find_by_id(message.user_id)
+              %td= link_to user.username, user
               %td= link_to message.title, message
               %td= message.content
               %td= message.created_at.to_formatted_s(:db)
