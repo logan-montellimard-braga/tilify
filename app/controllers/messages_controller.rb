@@ -27,7 +27,7 @@ class MessagesController < ApplicationController
   # GET /messages/new
   def new
     if admin_signed_in?
-      redirect_to :back, alert: "Vous ne pouvez pas envoyer de messages en tant qu'administrateur"
+      redirect_to root_url, alert: "Vous ne pouvez pas envoyer de messages en tant qu'administrateur"
     end
     @message = Message.new
   end
