@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  root 'tuiles#index'
+
   resources :tuiles
 
   match '/contact' => 'messages#new', :via => :get
@@ -8,10 +10,6 @@ Rails.application.routes.draw do
   get '/admin' => 'adminpanel#index', :as => :adminpanel_index
   match '/users' => 'adminpanel#index', :via => :get
 
-  root 'site#index'
-  get 'site/index'
-  get 'site/aide'
-  get '/index' => 'site#index'
   get '/aide' => 'site#aide'
 
   devise_for :users
