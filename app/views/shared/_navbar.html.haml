@@ -36,7 +36,9 @@
                 - if admin_signed_in?
                   &nbsp;Administration
                 - elsif user_signed_in?
-                  &nbsp;Espace membre
+                  &nbsp;Espace membre (
+                  = current_user.username
+                  )
                 - else
                   &nbsp;Nous rejoindre
             %ul.dropdown
@@ -58,7 +60,9 @@
                 - if admin_signed_in?
                   &nbsp;Administration
                 - elsif user_signed_in?
-                  &nbsp;Espace membre
+                  &nbsp;Espace membre (
+                  = current_user.username
+                  )
                 - else
                   &nbsp;Nous rejoindre
             %ul.dropdown
