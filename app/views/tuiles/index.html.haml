@@ -20,6 +20,13 @@
             Documentation
 
 %section#searchInTiles
+  - if @best_tags.length > 0
+    .row
+      .columns.medium-6.small-centered.text-left
+        %legend Tags les plus populaires
+        %ul.taglistReverse
+          - @best_tags.each do |tag|
+            %li= tag
   .row
     .columns.medium-6.small-centered
       %form{:method => :get, :action => '#'}

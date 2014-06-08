@@ -7,6 +7,7 @@ class TuilesController < ApplicationController
   def index
     @tuiles = Tuile.all.reverse
     @users = User.all
+    @best_tags = get_most_used_tags(10)
   end
 
   # GET /tuiles/1
@@ -87,6 +88,10 @@ class TuilesController < ApplicationController
       else
         @tuile = Tuile.find(params[:id])
       end
+    end
+
+    def get_most_used_tags(limit)
+      return Tuile.tag_counts_on(:tags).limit(limit).order('count desc')
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.
