@@ -42,11 +42,11 @@
       .row
         .gallerie.small-centered.columns.medium-10
           - @tuiles.each do |tuile|
-            = link_to tuile.lien do
+            = link_to tuile.lien, :target => "_blank" do
               - n = rand(1..2)
               .masonWrapper
                 .columns.text-center.small-6.medium-4.large-3.myMasonry{:class => 'tuile' + n.to_s}
                   %h3= tuile.titre
-                  = image_tag 'image.png'
+                  = image_tag tuile.image
                   %p= tuile.description
       %br
