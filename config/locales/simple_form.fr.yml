@@ -13,6 +13,7 @@ fr:
     # Labels and hints examples
     labels:
       defaults:
+        tag_list: "Tags"
         username: "Nom d'utilisateur"
         content: "Contenu"
         title: "Sujet"
