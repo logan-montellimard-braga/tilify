@@ -75,14 +75,16 @@ class MessagesController < ApplicationController
   # DELETE /messages/1
   # DELETE /messages/1.json
   def destroy
-    @message.destroy
-    respond_to do |format|
-      if admin_signed_in?
-        format.html { redirect_to :back, notice: 'Message supprimé' }
-      else
-        format.html { redirect_to messages_url, notice: 'Message supprimé' }
+    if admin_signed_in? || current_user.id == @message.user_id
+      @message.destroy
+      respond_to do |format|
+        if admin_signed_in?
+          format.html { redirect_to root_url, notice: 'Message supprimé' }
+        else
+          format.html { redirect_to messages_url, notice: 'Message supprimé' }
+        end
+        format.json { head :no_content }
       end
-      format.json { head :no_content }
     end
   end
 
