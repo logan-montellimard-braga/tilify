@@ -493,6 +493,7 @@ nav .dropdown a:hover {
   margin-left: 4%;
   margin-right: 4%;
   width: 70%;
+  border: 1px solid rgba(255,255,255,1);
 }
 
 .myMasonry h3 {
@@ -513,8 +514,12 @@ nav .dropdown a:hover {
   padding: 0.4rem;
 }
 
-.masonWrapper:hover p, .masonWrapper:hover h3{
+.masonWrapper:hover p, .masonWrapper:hover h3, .masonWrapper:hover i{
   color: rgba(255,255,255,0.5) !important;
+}
+
+.masonWrapper:hover .myMasonry img {
+  border: 1px solid rgba(255,255,255,0.5);
 }
 
 .docu {
@@ -548,4 +553,8 @@ nav .dropdown a:hover {
 
 img.small {
   width: 100px;
+}
+
+.tileType {
+  margin: 5px 5px 0px 0px !important;
 }

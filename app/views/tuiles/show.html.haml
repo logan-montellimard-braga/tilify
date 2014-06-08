@@ -20,8 +20,12 @@
             = @tuile.created_at.to_formatted_s(:db)
           - if @tuile.created_at.to_formatted_s(:db) != @tuile.updated_at.to_formatted_s(:db)
             %cite>
+              %br
               &Eacute;dit&eacute; le 
               = @tuile.updated_at.to_formatted_s(:db)
+          .right
+            %i.tileType.fa{:class => 'fa-' + getIconByType(@tuile)}
+            = @tuile.forme
 
     %br
     .row
