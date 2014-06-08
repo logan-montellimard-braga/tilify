@@ -8,6 +8,7 @@ class TuilesController < ApplicationController
     @tuiles = Tuile.all.reverse
     @users = User.all
     @best_tags = get_most_used_tags(10)
+    @number = Tuile.count
   end
 
   # GET /tuiles/1

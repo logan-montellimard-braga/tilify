@@ -38,7 +38,7 @@
               %i.fa.fa-search
   .row
     .columns.medium-6.small-centered.text-center
-      = link_to 'Créer une tuile', new_tuile_path, class: 'button blackbutton expand '
+      = link_to 'Créer une tuile (' + @number.to_s + ')', new_tuile_path, class: 'button blackbutton expand '
   .row
     .columns.medium-10.small-centered
       %hr
