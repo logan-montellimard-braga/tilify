@@ -1,5 +1,6 @@
 class TuilesController < ApplicationController
   before_action :set_tuile, only: [:show, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new]
 
   # GET /tuiles
   # GET /tuiles.json
@@ -63,14 +64,16 @@ class TuilesController < ApplicationController
   # DELETE /tuiles/1
   # DELETE /tuiles/1.json
   def destroy
-    @tuile.destroy
-    respond_to do |format|
-      if admin_signed_in?
-        format.html { redirect_to :back, notice: 'Tuile supprimée' }
-      else
-        format.html { redirect_to tuiles_url, notice: 'Tuile supprimée' }
+    if admin_signed_in? || current_user.id == @tuile.user_id
+      @tuile.destroy
+      respond_to do |format|
+        if admin_signed_in?
+          format.html { redirect_to root_url, notice: 'Tuile supprimée' }
+        else
+          format.html { redirect_to tuiles_url, notice: 'Tuile supprimée' }
+        end
+        format.json { head :no_content }
       end
-      format.json { head :no_content }
     end
   end
 
