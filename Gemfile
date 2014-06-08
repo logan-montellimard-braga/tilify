@@ -28,6 +28,7 @@ end
 
 gem 'devise', '~> 3.0.0.rc'
 gem 'masonry-rails'
+gem 'acts-as-taggable-on'
 gem 'sprockets', '2.11.0'
 gem 'foundation-rails'
 gem 'simple_form', '~> 3.0.0.rc'
