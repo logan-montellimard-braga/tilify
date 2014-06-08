@@ -7,4 +7,5 @@ class Tuile < ActiveRecord::Base
     length: { minimum: 5, maximum: 50 }, presence: true
   validates :description, length: { minimum: 10, maximum: 300 }, presence: true
   validates :forme, presence: true
+  validates :image, :format => { :with => /\A.+\.(jpeg|jpg|png|gif)\z/ }
 end
