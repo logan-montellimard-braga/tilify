@@ -373,7 +373,7 @@ blockquote:hover:not(.noHover) h6 {
 }
 
 .blue {
-  color: #085a78;
+  color: #085a78 !important;
   font-weight: bold;
 }
 
@@ -544,4 +544,8 @@ nav .dropdown a:hover {
 
 .blackbutton:hover {
   background-color: #151515;
+}
+
+img.small {
+  width: 100px;
 }

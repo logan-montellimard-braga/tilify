@@ -9,15 +9,19 @@
     %br
     %br
 
-    %blockquote
-      %h6= @tuile.titre
-      %p= @tuile.description
-      %cite>
-        = @tuile.created_at.to_formatted_s(:db)
-      - if @tuile.created_at.to_formatted_s(:db) != @tuile.updated_at.to_formatted_s(:db)
-        %cite>
-          &Eacute;dit&eacute; le 
-          = @tuile.updated_at.to_formatted_s(:db)
+    .row
+      =link_to( (image_tag @tuile.image, class: 'th small'), @tuile.image)
+    .row
+      = link_to @tuile.lien, :target => '_blank' do
+        %fieldset
+          %legend.blue= @tuile.titre
+          %p.black= @tuile.description
+          %cite>
+            = @tuile.created_at.to_formatted_s(:db)
+          - if @tuile.created_at.to_formatted_s(:db) != @tuile.updated_at.to_formatted_s(:db)
+            %cite>
+              &Eacute;dit&eacute; le 
+              = @tuile.updated_at.to_formatted_s(:db)
 
     %br
     .row
