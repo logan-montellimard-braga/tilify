@@ -5,7 +5,19 @@ class TuilesController < ApplicationController
   # GET /tuiles
   # GET /tuiles.json
   def index
-    @tuiles = Tuile.all.reverse
+    if params[:search] && params[:tagOnly]
+      query = params[:search].split(' ')
+      @tuiles = Tuile.tagged_with(query, :any => true).order('created_at DESC')
+    elsif params[:search]
+      @tuiles = []
+      query = params[:search].split(' ')
+      query.map { |q| @tuiles += Tuile.search(q) }
+      @tuiles += Tuile.tagged_with(query, :any => true)
+      @tuiles = @tuiles.uniq.sort { |x,y| y.created_at <=> x.created_at }
+    else
+      @tuiles = Tuile.all.order('created_at DESC')
+    end
+
     @users = User.all
     @best_tags = get_most_used_tags(10)
     @number = Tuile.count
