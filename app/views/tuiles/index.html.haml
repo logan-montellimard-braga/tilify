@@ -69,7 +69,7 @@
           - @tuiles.each do |tuile|
             - n = rand(1..2)
             .masonWrapper
-              .columns.text-center.small-6.medium-4.large-3.myMasonry{:class => 'tuile' + n.to_s}
+              .columns.text-center.small-12.medium-4.large-3.myMasonry{:class => 'tuile' + n.to_s}
                 .row
                   %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
                 = link_to tuile.lien, :target => "_blank" do

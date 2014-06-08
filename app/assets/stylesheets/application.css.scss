@@ -149,7 +149,7 @@ nav h1 {
 }
 
 nav h1 a:hover {
-  color: #085a78 !important;
+  color: #bfbfbf !important;
 }
 
 nav .active a{
@@ -621,4 +621,14 @@ li.tag:hover a{
 
 .white a{
   color: white;
+}
+
+.more_tag {
+  background-color: transparent !important;
+  color: #bfbfbf !important;
+  font-weight: bold !important;
+}
+
+#messages blockquote p {
+  text-align: left !important;
 }
