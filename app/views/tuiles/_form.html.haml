@@ -5,8 +5,8 @@
   .form-inputs
     = f.input :lien
     = f.input :image
-    = f.input :titre
-    = f.input :description, :input_html => { :rows => 10, :maxlength => 300 }
+    = f.input :titre, :input_html => { :maxlength => 51 }
+    = f.input :description, :input_html => { :rows => 10, :maxlength => 301 }
     = f.input :forme, :as => :select, :collection => available_types.map(&:capitalize), :prompt => true
 
   .form-actions
