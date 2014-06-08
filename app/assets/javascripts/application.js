@@ -15,6 +15,7 @@
 //= require foundation
 //= require turbolinks
 //= require masonry/jquery.masonry
+//= masonry/modernizr-transitions
 //= require_tree .
 
 $(function($){
@@ -41,5 +42,4 @@ $(function($){
     itemSelector: '.myMasonry',
     isAnimated: !Modernizr.csstransitions,
   });
-
 }(jQuery));
