@@ -26,7 +26,7 @@
         %legend Tags les plus populaires
         %ul.taglistReverse
           - @best_tags.each do |tag|
-            %li= tag
+            %li.tag= link_to tag, root_path(search: tag.name, tagOnly:  true)
   .row
     .columns.medium-6.small-centered
       %form{:method => :get, :action => '#'}
