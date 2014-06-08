@@ -26,6 +26,48 @@
       %br
       %p.text-center
         Les tuiles sont le cœur du site web&nbsp;; ce sont elles qui contiennent les liens, leurs descriptions et toutes les fonctionnalit&eacute;s indispensables qu'on leur accorde !
+        %br
+        Chaque tuile dispose d'un icône en haut &agrave; droite, qui repr&eacute;sente le type du lien.
+        %br
+        %a{:href => '#', 'data-reveal-id' => 'typesIconsList'}
+          %i.fa.fa-info
+          &nbsp;
+          Liste des icônes et leur signification
+      #typesIconsList.small.small-centered.text-center.reveal-modal{'data-reveal' => ''}
+        %p.black.lead Liste des icônes et leur signification
+        .row
+          .columns.small-centered.medium-10
+            %table
+              %body
+                %tr
+                  %td
+                    %i.fa.fa-image
+                  %td Image
+                %tr
+                  %td
+                    %i.fa.fa-graduation-cap
+                  %td Tutoriel
+                %tr
+                  %td
+                    %i.fa.fa-video-camera
+                  %td Vid&eacute;o
+                %tr
+                  %td
+                    %i.fa.fa-bookmark
+                  %td Site web
+                %tr
+                  %td
+                    %i.fa.fa-comments
+                  %td Forum
+                %tr
+                  %td
+                    %i.fa.fa-book
+                  %td Documentation
+                %tr
+                  %td
+                    %i.fa.fa-ellipsis-h
+                  %td Autre
+        %a.close-reveal-modal &times;
     %br
     %br
     %br
