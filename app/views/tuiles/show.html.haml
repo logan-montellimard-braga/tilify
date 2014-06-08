@@ -27,6 +27,15 @@
             %i.tileType.fa{:class => 'fa-' + getIconByType(@tuile)}
             = @tuile.forme
 
+      %fieldset
+        %legend.blue Tags
+        - if @tuile.tag_list.length > 0
+          %ul.taglist
+            - @tuile.tag_list.each do |tag|
+              %li= tag
+        - else
+          %p.black Il n'y a rien ici !
+
     %br
     .row
       .columns.small-centered.text-center

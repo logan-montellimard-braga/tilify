@@ -1,4 +1,5 @@
 class Tuile < ActiveRecord::Base
+  acts_as_taggable
   belongs_to :user
 
   validates :lien, :format => URI::regexp(%w(http https)), presence: true
@@ -8,4 +9,5 @@ class Tuile < ActiveRecord::Base
   validates :description, length: { minimum: 10, maximum: 300 }, presence: true
   validates :forme, presence: true
   validates :image, :format => { :with => /\A.+\.(jpeg|jpg|png|gif)\z/ }
+  validates :tag_list, presence: true, length: { minimum: 3, maximum: 255 }
 end

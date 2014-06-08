@@ -51,4 +51,10 @@
                   %h3= tuile.titre
                   = image_tag tuile.image
                   %p= tuile.description
+                  - if tuile.tag_list.length > 0
+                    %ul.taglistReverse
+                      - tuile.tag_list[0..2].each do |tag|
+                        %li= tag
+                      - if tuile.tag_list.length > 3
+                        %li <strong>...</strong>
       %br

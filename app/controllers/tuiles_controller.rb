@@ -5,7 +5,7 @@ class TuilesController < ApplicationController
   # GET /tuiles
   # GET /tuiles.json
   def index
-    @tuiles = Tuile.all
+    @tuiles = Tuile.all.reverse
     @users = User.all
   end
 
@@ -35,6 +35,7 @@ class TuilesController < ApplicationController
     # @tuile = Tuile.new(tuile_params)
     @tuile = current_user.tuiles.build
     @tuile.attributes = tuile_params
+    @tuile.tag_list.add(params[:tag_list], parse: true)
 
     respond_to do |format|
       if @tuile.save
@@ -90,6 +91,6 @@ class TuilesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def tuile_params
-      params.require(:tuile).permit(:lien, :image, :titre, :description, :forme)
+      params.require(:tuile).permit(:lien, :image, :titre, :description, :forme, :tag_list)
     end
 end

@@ -514,8 +514,20 @@ nav .dropdown a:hover {
   padding: 0.4rem;
 }
 
+.masonWrapper hr {
+  border-top: 1px solid rgba(255,255,255,1);
+}
+
+.masonWrapper:hover li {
+  background-color: rgba(255,255,255,0.5);
+}
+
 .masonWrapper:hover p, .masonWrapper:hover h3, .masonWrapper:hover i{
   color: rgba(255,255,255,0.5) !important;
+}
+
+.masonWrapper:hover hr {
+  border-top: 1px solid rgba(255,255,255,0.5);
 }
 
 .masonWrapper:hover .myMasonry img {
@@ -558,4 +570,32 @@ img.small {
 
 .tileType {
   margin: 5px 5px 0px 0px !important;
+}
+
+.taglist li {
+  display: inline;
+  padding: 10px;
+  border-radius: 2px;
+  background-color: #008cba;
+  color: white;
+  margin-right: 5px;
+}
+
+.taglistReverse {
+  text-align: left !important;
+  margin: 0 0 10px 0 !important;
+}
+
+.taglistReverse li {
+  display: inline;
+  padding: 5px;
+  border-radius: 2px;
+  background-color: white;
+  color: #085a78;
+  margin-right: 3px;
+  font-size: 0.7em;
+}
+
+.masonWrapper hr {
+  margin: 10px 0 !important;
 }

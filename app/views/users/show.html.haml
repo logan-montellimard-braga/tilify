@@ -57,29 +57,20 @@
                                   - n = rand(1..2)
                                   .masonWrapper
                                     .columns.text-center.small-12.medium-12.large-6.myMasonry{:class => 'tuile' + n.to_s}
+                                      .row
+                                        %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
                                       %h3= tuile.titre
-                                      = image_tag 'image.png'
+                                      = image_tag tuile.image
                                       %p= tuile.description
+                                      - if tuile.tag_list.length > 0
+                                        %ul.taglistReverse
+                                          - tuile.tag_list[0..2].each do |tag|
+                                            %li= tag
+                                          - if tuile.tag_list.length > 3
+                                            %li <strong>...</strong>
+
                   - else
                     %p.black Il n'y a rien ici.
-                    -# %table
-                    -#   %thead
-                    -#     %tr
-                    -#       %th Titre
-                    -#       %th Lien
-                    -#       %th Description
-                    -#       %th Type
-                    -#       %th Date
-                    -#   %tbody
-                    -#     - @tuiles.each do |tuile|
-                    -#       %tr
-                    -#         %td= link_to tuile.titre, tuile
-                    -#         %td= link_to 'Lien', tuile.lien
-                    -#         %td= tuile.description
-                    -#         %td= tuile.forme
-                    -#         %td= tuile.created_at.to_formatted_s(:db)
-                  -# - else
-                    -# %p.black Il n'y a rien ici.
 
                 #messages.content
                   - if @messages.length > 0
@@ -93,27 +84,6 @@
                                   %h6{class: message.public ? '' : 'red' }= message.title
                                   %p= message.content
                                   %cite= getUserById(message.user_id).username
-                    -# %table
-                    -#   %thead
-                    -#     %tr
-                    -#       %th Sujet
-                    -#       %th Message
-                    -#       %th Statut
-                    -#       %th Date
-                    -#   %tbody
-                    -#     - @messages.each do |message|
-                    -#       - if message.public
-                    -#         %tr
-                    -#           %td= link_to message.title, message
-                    -#           %td= message.content
-                    -#           %td= message.public ? 'Public' : 'Privé'
-                    -#           %td= message.created_at.to_formatted_s(:db)
-                    -#       - else
-                    -#         %tr.red
-                    -#           %td= link_to message.title, message
-                    -#           %td= message.content
-                    -#           %td= message.public ? 'Public' : 'Privé'
-                    -#           %td= message.created_at.to_formatted_s(:db)
                   - else
                     %p.black Il n'y a rien ici.
 - else
