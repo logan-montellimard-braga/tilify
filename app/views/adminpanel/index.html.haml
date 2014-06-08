@@ -42,15 +42,15 @@
             &nbsp;
             Administrateurs
         %li.tab-title
-          %a{:href => '#messages'}
-            %i.fa.fa-comments
-            &nbsp;
-            Messages
-        %li.tab-title
           %a{:href => '#tuiles'}
             %i.fa.fa-square
             &nbsp;
             Tuiles
+        %li.tab-title
+          %a{:href => '#messages'}
+            %i.fa.fa-comments
+            &nbsp;
+            Messages
       .tabs-content
         #utilisateurs.content.active
           = render 'users'
