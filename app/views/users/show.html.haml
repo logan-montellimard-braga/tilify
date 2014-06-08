@@ -83,7 +83,7 @@
                                 %blockquote
                                   %h6{class: message.public ? '' : 'red' }= message.title
                                   %p= message.content
-                                  %cite= getUserById(message.user_id).username
+                                  -# %cite= message.user.username
                   - else
                     %p.black Il n'y a rien ici.
 - else

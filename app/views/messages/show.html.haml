@@ -15,7 +15,7 @@
       %h6= @message.title
       %p= @message.content
       %cite>
-        = getUserById(@message.user_id).username
+        = @message.user.username
         , le
         = @message.created_at.to_formatted_s(:db)
       - if @message.created_at.to_formatted_s(:db) != @message.updated_at.to_formatted_s(:db)

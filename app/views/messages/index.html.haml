@@ -19,4 +19,4 @@
               %blockquote
                 %h6= message.title
                 %p= message.content
-                %cite= getUserById(message.user_id).username
+                %cite= message.user.username
