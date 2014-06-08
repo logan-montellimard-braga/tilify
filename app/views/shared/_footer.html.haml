@@ -25,12 +25,12 @@
           %h5 Rechercher parmi les tuiles
           %p Vous pouvez rechercher &agrave; peu pr&egrave;s tout et n'importe quoi. À peu pr&egrave;s.
         .medium-4.columns
-          %form{:method => :get, :action => '#'}
-            .row.collapse.margintop-20px
+          = form_tag root_path, method: :get, id: 'search-form-bottom' do
+            .row.collapse
               .small-8.medium-8.columns
-                %input{type: :text, name: :search, :placeholder => 'Mot-clé...'}
+                = text_field_tag :search, '', placeholder: 'Titre, mot-clé, tag, ...', maxlength: 255
               .small-4.medium-4.columns
-                %button.postfix.medium.button{:type => 'submit'}
+                = button_tag type: 'submit', class: 'postfix medium button' do
                   %i.fa.fa-search
 
   .footer-middle

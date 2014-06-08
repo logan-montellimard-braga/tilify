@@ -609,3 +609,16 @@ img.small {
 li.tag:hover a{
   color: #404040;
 }
+
+.masonWrapper li.tag:hover {
+  background-color: white !important;
+  color: red !important;
+}
+
+.masonWrapper .more {
+  font-weight: bold;
+}
+
+.white a{
+  color: white;
+}
