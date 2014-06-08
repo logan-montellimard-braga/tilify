@@ -4,7 +4,7 @@
       Tuiles
       %i.fa.fa-plus-circle
     .small-12.columns.small-centered.text-center
-      #tilesModal.content.large.text-center.reveal-modal{'data-reveal' => ''}
+      #tilesModal.content.xlarge.text-center.reveal-modal{'data-reveal' => ''}
         %p.lead D&eacute;tails des tuiles
         - if @tuiles.length > 0
           %table
@@ -16,6 +16,7 @@
                 %th Lien
                 %th Image
                 %th Description
+                %th Tags
                 %th Type
                 %th Date
                 %th Mise &agrave; jour
@@ -32,6 +33,9 @@
                   %td= link_to 'Lien', tuile.lien
                   %td= link_to 'Image', tuile.image
                   %td= tuile.description
+                  %td
+                    - tuile.tag_list.each do |tag|
+                      %li= tag
                   %td= tuile.forme.capitalize
                   %td= tuile.created_at.to_formatted_s(:db)
                   %td= tuile.updated_at.to_formatted_s(:db)
