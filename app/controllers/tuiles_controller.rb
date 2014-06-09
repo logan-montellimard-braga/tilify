@@ -21,7 +21,7 @@ class TuilesController < ApplicationController
     end
 
     @users = User.all
-    @best_tags = get_most_used_tags(10)
+    @best_tags = get_most_used_tags(5)
     @number = Tuile.count
     @favs = current_user.favorites if user_signed_in?
   end
