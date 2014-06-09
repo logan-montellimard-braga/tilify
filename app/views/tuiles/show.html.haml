@@ -39,7 +39,7 @@
     %br
     .row
       .columns.small-centered.text-center
-        - if (admin_signed_in? || current_user.id == @tuile.user_id)
+        - if (admin_signed_in? || (user_signed_in? && current_user.id == @tuile.user_id))
           = link_to 'Modifier', edit_tuile_path(@tuile), class: 'button'
           = link_to 'Supprimer', tuile_path(@tuile), class: 'button alert', :method => :delete, :data => { :confirm => "Êtes-vous certain ?" }
         %br
