@@ -19,6 +19,7 @@
             &nbsp;
             Documentation
 
+
 %section#searchInTiles
   - if @best_tags.length > 0
     .row
@@ -42,6 +43,7 @@
   .row
     .columns.medium-10.small-centered
       %hr
+
 
 %section#tiles.tuilesIndex
   .columns.medium-10.small-centered
@@ -69,6 +71,7 @@
           Affichage des tuiles avec le(s) tag(s) ou le(s) titre semblable &agrave; "
           = params[:search]
           "
+
     #masonry-container.transitions-enabled.clearfix.centered
       .row
         .gallerie.small-centered.columns.medium-10
@@ -77,8 +80,9 @@
             .masonWrapper
               .columns.text-center.small-12.medium-4.large-3.myMasonry{:class => 'tuile' + n.to_s}
                 .row
-                  %i.right.tileType.closeTile.fa.fa-times
-                  = link_to root_path(search: tuile.forme, typeOnly: true) do
+                  %a{:href => '#', title: 'Cacher la tuile'}
+                    %i.right.tileType.closeTile.fa.fa-times
+                  = link_to root_path(search: tuile.forme, typeOnly: true), title: 'Chercher les tuiles de type ' + tuile.forme do
                     %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
                 = link_to tuile.lien, :target => "_blank" do
                   %h3= tuile.titre

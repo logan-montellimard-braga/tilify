@@ -57,17 +57,20 @@
                                 .masonWrapper
                                   .columns.text-center.small-12.medium-12.large-6.myMasonry{:class => 'tuile' + n.to_s}
                                     .row
-                                      %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
-                                    = link_to tuile do
+                                      %a{:href => '#', title: 'Cacher la tuile'}
+                                        %i.right.tileType.closeTile.fa.fa-times
+                                      = link_to root_path(search: tuile.forme, typeOnly: true), title: 'Chercher les tuiles de type ' + tuile.forme do
+                                        %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
+                                    = link_to tuile.lien, :target => "_blank" do
                                       %h3= tuile.titre
                                       = image_tag tuile.image
                                       %p= tuile.description
-                                      - if tuile.tag_list.length > 0
-                                        %ul.taglistReverse
-                                          - tuile.tag_list[0..2].each do |tag|
-                                            %li.tag= link_to tag, root_url(search: tag, tagOnly: true)
-                                          - if tuile.tag_list.length > 3
-                                            %li.tag.more= link_to '...', tuile
+                                    - if tuile.tag_list.length > 0
+                                      %ul.taglistReverse
+                                        - tuile.tag_list[0..2].each do |tag|
+                                          %li.tag= link_to tag, root_path(search: tag, tagOnly: true)
+                                        - if tuile.tag_list.length > 3
+                                          %li.tag.more= link_to '...', tuile
 
                   - else
                     %p.black Il n'y a rien ici.
