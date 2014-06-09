@@ -49,6 +49,10 @@
   .columns.medium-10.small-centered
     .columns.small-centered.text-center
       %p.black>
+        = link_to 'Populaire', root_path(popular: true)
+        \-
+        = link_to 'Récent', root_path
+        %br
         - if (@tuiles.length == 0 && params[:search])
           Aucun r&eacute;sultat trouv&eacute; pour "
           = params[:search]

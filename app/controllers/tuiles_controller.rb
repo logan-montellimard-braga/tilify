@@ -16,6 +16,8 @@ class TuilesController < ApplicationController
       query.map { |q| @tuiles += Tuile.search(q) }
       @tuiles += Tuile.tagged_with(query, :any => true)
       @tuiles = @tuiles.uniq.sort { |x,y| y.created_at <=> x.created_at }
+    elsif params[:popular]
+      @tuiles = Tuile.all.order('created_at DESC').sort { |x,y| y.favorited_by.count <=> x.favorited_by.count }
     else
       @tuiles = Tuile.all.order('created_at DESC')
     end
