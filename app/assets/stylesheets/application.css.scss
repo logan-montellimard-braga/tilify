@@ -530,6 +530,10 @@ nav .dropdown a:hover {
   border-top: 1px solid rgba(255,255,255,0.5);
 }
 
+.masonWrapper:hover span {
+  color: rgba(255,255,255,0.5) !important;
+}
+
 .masonWrapper:hover .myMasonry img {
   // border: 1px solid rgba(255,255,255,0.5);
   // opacity: 0.5;

@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
   has_many :messages, :dependent => :destroy
   has_many :tuiles, :dependent => :destroy
 
+  has_many :favorite_tuiles, :dependent => :destroy
+  has_many :favorites, through: :favorite_tuiles, source: :tuile
+
   validates :username, :uniqueness => { :case_sensitive => false },
     exclusion: { in: %w(admin root tilify Admin Root Tilify), message: "%{value} est réservé." },
     length: { minimum: 3, maximum: 50, too_long: "Trop long !", too_short: "Trop court !" }

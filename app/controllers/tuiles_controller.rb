@@ -1,5 +1,5 @@
 class TuilesController < ApplicationController
-  before_action :set_tuile, only: [:show, :edit, :update, :destroy]
+  before_action :set_tuile, only: [:show, :edit, :update, :destroy, :favorite]
   before_action :authenticate_user!, only: [:new]
 
   # GET /tuiles
@@ -23,6 +23,29 @@ class TuilesController < ApplicationController
     @users = User.all
     @best_tags = get_most_used_tags(10)
     @number = Tuile.count
+    @favs = current_user.favorites if user_signed_in?
+  end
+
+  # PUT Favorites
+  def favorite
+    # favs = current_user.favorites
+    # if favs.include?(@tuile)
+    #   current_user.favorites.delete(@tuile)
+    #   redirect_to :back, notice: "Favori supprimé : #{@tuile.titre}."
+    # else
+    #   current_user.favorites << @tuile
+    #   redirect_to :back, notice: "Favori ajouté : #{@tuile.titre}."
+    # end
+    type = params[:toggle]
+    if type == 'add'
+      current_user.favorites << @tuile
+      redirect_to :back, notice: "Favori ajouté : #{@tuile.titre}."
+    elsif type == 'del'
+      current_user.favorites.delete(@tuile)
+      redirect_to :back, notice: "Favori supprimé : #{@tuile.titre}."
+    else
+      redirect_to :back, alert: "Pas d'action spécifiée ; aucun changement."
+    end
   end
 
   # GET /tuiles/1
@@ -40,7 +63,7 @@ class TuilesController < ApplicationController
 
   # GET /tuiles/1/edit
   def edit
-    unless admin_signed_in? || current_user.id == @tuile.user_id
+    unless admin_signed_in? || (user_signed_in? && current_user.id == @tuile.user_id)
       redirect_to root_url, alert: "Vous ne pouvez pas modifier une tuile qui ne vous appartient pas."
     end
   end

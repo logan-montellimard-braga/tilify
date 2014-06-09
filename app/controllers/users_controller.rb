@@ -9,6 +9,7 @@ class UsersController < ApplicationController
     @messages = @messages.reverse
     @tuiles = @user.tuiles
     @tuiles = @tuiles.reverse
+    @favs = @user.favorites.order('created_at DESC')
   end
 
   def destroy

@@ -36,6 +36,28 @@
         - else
           %p.black Il n'y a rien ici !
 
+      %fieldset
+        %legend.blue Favoris
+        %p.black>
+          - if @tuile.favorited_by.length > 1
+            Cette tuile a &eacute;t&eacute; ajout&eacute;e aux favoris de
+            = @tuile.favorited_by.length
+            personnes.
+          - elsif @tuile.favorited_by.length > 0
+            Cette tuile a &eacute;t&eacute; ajout&eacute;e aux favoris d'1 personne.
+          - else
+            Cette tuile n'a pas encore &eacute;t&eacute; ajout&eacute;e aux favoris.
+        - if (user_signed_in? && current_user.favorites.include?(@tuile))
+          = link_to 'Supprimer des favoris', favorite_tuile_path(@tuile, toggle: 'del'), title: 'Supprimer des favoris', method: :put
+        - elsif (user_signed_in?)
+          = link_to 'Ajouter aux favoris', favorite_tuile_path(@tuile, toggle: 'add'), title: 'Ajouter aux favoris', method: :put
+
+        - if admin_signed_in?
+          %ul.favsList
+            - @tuile.favorited_by.each do |u|
+              %li= link_to u.username, u
+
+
     %br
     .row
       .columns.small-centered.text-center

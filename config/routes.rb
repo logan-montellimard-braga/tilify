@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
   root 'tuiles#index'
 
-  resources :tuiles
+  resources :tuiles do
+    put :favorite, on: :member
+  end
 
   match '/contact' => 'messages#new', :via => :get
   resources :messages

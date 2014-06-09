@@ -1,6 +1,8 @@
 class Tuile < ActiveRecord::Base
   acts_as_taggable
   belongs_to :user
+  has_many :favorite_tuiles, :dependent => :destroy
+  has_many :favorited_by, through: :favorite_tuiles, source: :user
 
   validates :lien, :format => URI::regexp(%w(http https)), presence: true
   validates :image, :format => URI::regexp(%w(http https)), presence: true
