@@ -36,19 +36,25 @@
               %ul.tabs{'data-tab' => ''}
                 %li.tab-title.active
                   %a{:href => '#tuiles'}
-                    %i.fa.fa-square
+                    %i.fa.fa-square<
                       &nbsp;
-                    Tuiles
+                    Tuiles (
+                    = @tuiles.length
+                    )
                 %li.tab-title
                   %a{:href => '#favs'}
                     %i.fa.fa-star
                       &nbsp;
-                    Favoris
+                    Favoris (
+                    = @favs.length
+                    )
                 %li.tab-title
                   %a{:href => '#messages'}
                     %i.fa.fa-comments
                       &nbsp;
-                    Messages
+                    Messages (
+                    = @messages.length
+                    )
 
               .tabs-content
                 #tuiles.content.active

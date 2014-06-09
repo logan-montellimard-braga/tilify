@@ -5,7 +5,10 @@
       %h1.text-center Messages des utilisateurs
       %br
       %br
-      = link_to 'Poster un message', contact_path, class: 'button'
+      = link_to contact_path, class: 'button' do
+        Poster un message (
+        = @messages.length
+        )
       %br
       %br
       %hr
