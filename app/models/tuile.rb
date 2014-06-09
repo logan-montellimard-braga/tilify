@@ -14,6 +14,6 @@ class Tuile < ActiveRecord::Base
   validates :tag_list, presence: true, length: { minimum: 1, maximum: 255 }
 
   def self.search(query)
-    where("titre like ?", "%#{query}%").order('created_at DESC')
+    where("LOWER(titre) like LOWER(?)", "%#{query}%").order('created_at DESC')
   end
 end
