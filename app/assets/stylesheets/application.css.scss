@@ -578,6 +578,7 @@ img.small {
   margin: 5px 5px 0px 0px !important;
 }
 
+
 .taglist li {
   display: inline;
   padding: 10px;
@@ -635,5 +636,8 @@ li.tag:hover a{
 
 .masonWrapper .closeTile:hover {
   cursor: pointer;
+  color: rgba(255,255,255,1) !important;
+}
+a .tileType, a .tileType:hover {
   color: rgba(255,255,255,1) !important;
 }

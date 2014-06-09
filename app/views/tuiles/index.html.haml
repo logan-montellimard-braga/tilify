@@ -57,6 +57,12 @@
           Affichage des tuiles avec le(s) tag(s) "
           = params[:search]
           "
+    - elsif params[:typeOnly]
+      .columns.small-centered.text-center
+        %p.black<
+          Affichage des tuiles de type "
+          = params[:search]
+          "
     - elsif params[:search]
       .columns.small-centered.text-center
         %p.black
@@ -72,7 +78,8 @@
               .columns.text-center.small-12.medium-4.large-3.myMasonry{:class => 'tuile' + n.to_s}
                 .row
                   %i.right.tileType.closeTile.fa.fa-times
-                  %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
+                  = link_to root_path(search: tuile.forme, typeOnly: true) do
+                    %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
                 = link_to tuile.lien, :target => "_blank" do
                   %h3= tuile.titre
                   = image_tag tuile.image

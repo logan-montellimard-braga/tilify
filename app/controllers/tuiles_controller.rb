@@ -8,6 +8,8 @@ class TuilesController < ApplicationController
     if params[:search] && params[:tagOnly]
       query = params[:search].split(' ')
       @tuiles = Tuile.tagged_with(query, :any => true).order('created_at DESC')
+    elsif params[:search] && params[:typeOnly]
+      @tuiles = Tuile.where("forme LIKE ?", "%#{params[:search]}%")
     elsif params[:search]
       @tuiles = []
       query = params[:search].split(' ')
