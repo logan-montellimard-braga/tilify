@@ -42,4 +42,11 @@ $(function($){
     itemSelector: '.myMasonry',
     isAnimated: !Modernizr.csstransitions,
   });
+
+  $('.closeTile').click(function(e) {
+    $(this).parent().parent().parent().fadeOut('slow');
+    setTimeout(function() {
+      $('#masonry-container').masonry();
+    }, 900);
+  })
 }(jQuery));

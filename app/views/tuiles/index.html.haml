@@ -71,6 +71,7 @@
             .masonWrapper
               .columns.text-center.small-12.medium-4.large-3.myMasonry{:class => 'tuile' + n.to_s}
                 .row
+                  %i.right.tileType.closeTile.fa.fa-times
                   %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
                 = link_to tuile.lien, :target => "_blank" do
                   %h3= tuile.titre
