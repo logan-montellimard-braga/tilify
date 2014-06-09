@@ -10,7 +10,7 @@ class MessagesController < ApplicationController
   # GET /messages
   # GET /messages.json
   def index
-    @messages = Message.where(:public => true)
+    @messages = Message.where(:public => true).order('created_at, DESC')
     @users = User.all
   end
 
