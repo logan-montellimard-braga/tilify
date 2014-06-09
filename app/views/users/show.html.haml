@@ -61,7 +61,7 @@
                                         %i.right.tileType.closeTile.fa.fa-times
                                       = link_to root_path(search: tuile.forme, typeOnly: true), title: 'Chercher les tuiles de type ' + tuile.forme do
                                         %i.right.tileType.fa{:class => 'fa-' + getIconByType(tuile)}
-                                    = link_to tuile.lien, :target => "_blank" do
+                                    = link_to tuile do
                                       %h3= tuile.titre
                                       = image_tag tuile.image
                                       %p= tuile.description
