@@ -1,0 +1,74 @@
+Tilify
+======
+
+Application web de recherche, partage et archivage de liens relatifs &agrave; un domaine particulier.
+
+
+Ceci est un **PROTOTYPE** !
+Version en ligne accessible sur [Heroku](https://tilify.herokuapp.com/).
+
+
+Ce projet est fictif et &eacute;ducatif ; il n'est ni ne sera maintenu, modifi&eacute;, support&eacute;. Ayant &eacute;t&eacute; r&eacute;alis&eacute; en 5 jours, en solitaire, avec des technologies
+tr&egrave;s loin du niveau attendu pendant l'&eacute;preuve, ce prototype n'est pas forc&eacute;ment tr&egrave;s  &eacute;l&eacute;gant dans son code et ne sera donc que peu enclin &agrave; servir d'illustration Ruby on Rails. A utiliser &agrave; vos risques et p&eacute;rils !
+
+-------------------------------------------
+Contexte
+--------
+
+#### Initiative
+Micro application cr&eacute;e dans le cadre de la *Web Week* de l'IUT MMI du Puy-en-Velay, r&eacute;alis&eacute;e par groupes
+de 4 &eacute;tudiants *(Logan BRAGA, Claire DELAYE, Valentin DUC, Pierre POUGET)*.
+
+
+Prototype r&eacute;alisable sur une dur&eacute;e de 5 jours de travail, pr&eacute;sent&eacute; en soutenance.
+
+#### Consignes
+- Application type *biblioth&egrave;que*, de partage de ressources
+- Prototype ais&eacute;ment adaptable &agrave; n'importe quel domaine
+- Application adaptative
+- Interface d'administration compl&egrave;te, graphique et accessible
+- Langages et outils libres
+
+-------------------------------------------
+L'application
+-------------
+
+#### Principe
+L'application consiste en un site web communautaire de partage de liens et ressources sur un th&egrave;me donn&eacute;, ici le web et le d&eacute;veloppement en g&eacute;n&eacute;ral.
+Le coeur de l'application est bas&eacute; sur le principe de *tuiles* qui accueillent les ressources, les messages, etc...
+
+
+Les utilisateurs non inscrits peuvent voir, rechercher et utiliser les tuiles des ressources. Les utilisateurs inscrits peuvent en plus en poster, les modifier, les archiver, ainsi que poster des messages, publics ou priv&eacute;s, et les commenter.
+
+#### Outils
+Le framework web Ruby on Rails 4.1 a &eacute;t&eacute; utilis&eacute; pour la r&eacute;alisation de cette application, mais &eacute;galement :
+
+- Zurb Foundation 5, framework CSS
+- HAML, outil de templating HTML
+- SASS (SCSS), outil de templating CSS
+- CoffeeScript, outil de templating JavaScript
+- Masonry.js (Isotope), plugin JavaScript de mise en forme de contenu fa&ccedil;on tuiles
+- ...
+
+
+Les nombreuses extensions Rails utilis&eacute;es pour acc&eacute;l&eacute;rer le d&eacute;veloppement *(devise, acts-as-taggable-on, ...)* sont disponibles dans le `Gemfile` &agrave; la racine de ce d&eacute;p&ocirc;t.
+
+-------------------------------------------
+Mentions l&eacute;gales
+-----------------------
+
+#### Licence (GNU/GPL 3)
+Tilify Webapp WebWeek
+
+
+Copyright (C) 2014  **Logan BRAGA**
+
+This program is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+This program is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
